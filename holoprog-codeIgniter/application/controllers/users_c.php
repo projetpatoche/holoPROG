@@ -19,6 +19,7 @@ class Users_c extends CI_Controller {
         $this->load->view('users_head');
         $this->load->view('users_menu');
         $this->load->view('users_index',$donnees);
+        $this->load->view('users_foot');
     }
 
 
@@ -48,8 +49,11 @@ class Users_c extends CI_Controller {
             }
         }
         $donnees['titre']="connexion";
-        // fin d'ajout et redirection
+        // fin d'ajout et redirection$this->load->view('users_head');
+        $this->load->view('users_head');
+        $this->load->view('users_menu');
         $this->load->view('users_index',$donnees);
+        $this->load->view('users_foot');
     }
 
     public function aff_deconnexion(){
