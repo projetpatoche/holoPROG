@@ -16,6 +16,8 @@ class Users_c extends CI_Controller {
 			redirect('client_c');
         }
         $donnees['titre']="connexion";
+        $this->load->view('users_head');
+        $this->load->view('users_menu');
         $this->load->view('users_index',$donnees);
     }
 

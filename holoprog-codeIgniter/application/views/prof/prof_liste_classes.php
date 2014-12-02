@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default" role="navigation">
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
+        <ul class="">
             <li>
                 <a href="<?=base_url();?>/index.php/prof_c">Vos classes</a>
             </li>

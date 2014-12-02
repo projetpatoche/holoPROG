@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title><?php echo $titre?></title>
 
-    <link rel="stylesheet" href="<?= base_url(); ?>bootstrap/css/bootstrap.css">
-</head>
-<body>
-
-<div id="container">
-    <div>
+<div class="">
+    <div class="">
         <?php if($titre=="connexion"):?>
         <h1>Page de connexion</h1>
 
@@ -36,9 +27,4 @@
         <?php endif?>
 
 	</div>
-
-	<p class="footer">DUT info Belfort <strong>{elapsed_time}</strong> seconds</p>
 </div>
-
-</body>
-</html>
