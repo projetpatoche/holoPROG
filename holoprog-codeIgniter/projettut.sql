@@ -3,20 +3,15 @@
 -- $config['sess_use_database']	= TRUE;
 -- si autre table $config['sess_table_name']		= 'ci_sessions';
 
-Drop table solution_exo ;
-DROP TABLE eleve;
-DROP TABLE classe ;
-Drop Table professeur;
-Drop Table connexion;
-drop TABLE exercice ;
+Drop table if exists solution_exo ;
+DROP TABLE if exists eleve;
+DROP TABLE if exists classe ;
+Drop Table if exists professeur;
+Drop Table if exists connexion;
+drop TABLE if exists exercice ;
 
 
-Drop table Solution_exo ;
-DROP TABLE Eleve;
-DROP TABLE Classe ;
-Drop Table Professeur;
-Drop Table Connexion;
-drop TABLE Exercice ;
+
 
 CREATE TABLE IF NOT EXISTS `ci_sessions` (
   `session_id` varchar(40) NOT NULL DEFAULT '0',
@@ -30,25 +25,31 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 
 
 CREATE TABLE IF NOT EXISTS `connexion` (
-  `identifiant` int(11) NOT NULL AUTO_INCREMENT,
+  `identifiant` int(11) AUTO_INCREMENT,
   `pass` varchar(30) DEFAULT NULL,
   `login` varchar(30) DEFAULT NULL,
   `droit` int(11) NOT NULL,
   PRIMARY KEY (`identifiant`)
 ) ENGINE=InnoDB;
 
-INSERT INTO `connexion` (`identifiant`, `pass`, `login`, `droit`) VALUES(1, '1234', 'alex', 1);
-INSERT INTO `connexion` (`identifiant`, `pass`, `login`, `droit`) VALUES(2, '0000', 'quentin', 1);
-INSERT INTO `connexion` (`identifiant`, `pass`, `login`, `droit`) VALUES(3, '99999', 'corentin', 1);
-INSERT INTO `connexion` (`identifiant`, `pass`, `login`, `droit`) VALUES(4, 'hello', 'loan', 1);
+INSERT INTO `connexion` VALUES(null, '1234', 'alex', 1);
+INSERT INTO `connexion` VALUES(null, '0000', 'quentin', 1);
+INSERT INTO `connexion` VALUES(null, '99999', 'corentin', 1);
+INSERT INTO `connexion` VALUES(null, 'hello', 'loan', 1);
+INSERT INTO `connexion` VALUES(null, 'azerty', 'BERNARD', 2);
+INSERT INTO `connexion` VALUES(null, '5555', 'HENRY', 2);
+INSERT INTO `connexion` VALUES(null, 'hello', 'thomas', 1);
+insert into connexion values(null,'mdp','wgilbert',1);
+insert into connexion values(null,'mdp','jhelhoussine',1);
+insert into connexion values(null,'mdp','smorel',1);
+insert into connexion values(null,'mdp','vwilliam',1);
+insert into connexion values(null,'mdp','ypeslier',1);
+insert into connexion values(null,'mdp','cravier',1);
+insert into connexion values(null,'mdp','awolkz',1);
+insert into connexion values(null,'mdp','kbougetoucha',1);
 
-INSERT INTO `connexion` (`identifiant`, `pass`, `login`, `droit`) VALUES(5, 'azerty', 'BERNARD', 2);
-INSERT INTO `connexion` (`identifiant`, `pass`, `login`, `droit`) VALUES(6, '5555', 'HENRY', 2);
-
-INSERT INTO `connexion` (`identifiant`, `pass`, `login`, `droit`) VALUES(7, 'hello', 'thomas', 1);
 
 
-Drop Table professeur;
 CREATE TABLE IF NOT EXISTS `professeur` (
   `id_professeur` int(11) NOT NULL AUTO_INCREMENT,
   `nom_professeur` varchar(30) DEFAULT NULL,
@@ -70,22 +71,19 @@ VALUES(2, 'HENRY', 'J-P', 6);
 CREATE TABLE classe (
 id_classe int  AUTO_INCREMENT NOT NULL,
 nom_classe varchar(30), 
-moyenne_classe float(4,2), 
-best_eleve INT, 
-worst_eleve INT, 
 nbr_eleve INT, 
 id_professeur INT NOT NULL,
 Foreign key (id_professeur) references professeur(id_professeur),
 PRIMARY KEY (id_classe) ) ENGINE=InnoDB;
 
-INSERT INTO `classe`(`id_classe`, `nom_classe`, `moyenne_classe`, `best_eleve`, `worst_eleve`, `nbr_eleve`, `id_professeur`) 
-VALUES (null,"A1",12.5,2,1,30,1);
+INSERT INTO `classe`
+VALUES (null,"A1",30,1);
 
-INSERT INTO `classe`(`id_classe`, `nom_classe`, `moyenne_classe`, `best_eleve`, `worst_eleve`, `nbr_eleve`, `id_professeur`) 
-VALUES (null,"A2",11.4,3,3,30,1);
+INSERT INTO `classe` 
+VALUES (null,"A2",30,1);
 
-INSERT INTO `classe`(`id_classe`, `nom_classe`, `moyenne_classe`, `best_eleve`, `worst_eleve`, `nbr_eleve`, `id_professeur`) 
-VALUES (null,"B1",11.4,5,5,30,2);
+INSERT INTO `classe`
+VALUES (null,"B1",30,2);
 
 
 
@@ -139,5 +137,16 @@ Foreign key (id_exercice) references exercice(id_exercice),
 Foreign key (id_eleve) references eleve(id_eleve),
 PRIMARY KEY (id_eleve,id_exercice) 
 ) ENGINE=InnoDB; 
+
+
+
+insert into eleve values(null,'Gilbert','William',2,15,'1995-08-24',1,8);
+insert into eleve values(null,'E Houssine','Jawad',1,18,'1995-05-24',1,9);
+insert into eleve values(null,'Morel','Sylvain',1,3,'1995-05-24',1,10);
+insert into eleve values(null,'Viennet','William',1,14,'1995-05-24',1,11);
+insert into eleve values(null,'Peslier','Yoan',2,7,'1995-08-24',1,12);
+insert into eleve values(null,'Ravier','Clément',2,2,'1995-08-24',1,13);
+insert into eleve values(null,'Wolkz','Aurélien',1,8,'1995-08-24',1,14);
+insert into eleve values(null,'Bougetoucha','Khaled',1,9,'1995-08-24',1,15);
 
 

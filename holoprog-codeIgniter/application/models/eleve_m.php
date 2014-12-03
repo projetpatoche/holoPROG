@@ -24,5 +24,13 @@ class Eleve_m extends CI_Model {
         redirect();exit;
     }
 
+    public function getDetailsEleveForProf($idEleve){
+        $requete="SELECT * FROM Eleve WHERE id_eleve=".$idEleve.";";
+        $query=$this->db->query($requete);
+        $data=$query->row();
+        return $data;
+    }
+
+
     
 }

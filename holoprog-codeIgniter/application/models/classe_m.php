@@ -3,25 +3,24 @@
 class Classe_m extends CI_Model {
 
     public function getStatProf($id){
-        //récupération moyenne de classe + id du pire et meilleur élève
-        $requete="SELECT best_eleve,worst_eleve, moyenne_classe
-		FROM classe
-		WHERE id_classe=".$id.";";
+
+
+        //Calcul de la moyenne de classe
+        $requete ="SELECT AVG(moyenne_eleve) as moyenne FROM eleve where id_classe=".$id." GROUP BY id_classe;";
         $query=$this->db->query($requete);
-        $data=$query->row();
-        $donnee['moyenne_classe']=$data->moyenne_classe;
+        $donnee['moyenne_classe']=$query->row()->moyenne;
 
         //Recuperation de la moyenne des meilleurs et pire élèves
-        $requete="SELECT moyenne_eleve, nom_eleve from eleve where id_eleve=".$data->best_eleve.";";
-        $requete2="SELECT moyenne_eleve, nom_eleve from eleve where id_eleve=".$data->worst_eleve.";";
-
+        $requete="SELECT nom_eleve,moyenne_eleve FROM ELEVE  WHERE moyenne_eleve IN (SELECT MAX(moyenne_eleve) from eleve) ;";
+        $requete2="SELECT nom_eleve,moyenne_eleve FROM ELEVE  WHERE moyenne_eleve IN (SELECT MIN(moyenne_eleve) from eleve) ;";
         $query=$this->db->query($requete);
         $donnee['best']=$query->row();
-
         $query=$this->db->query($requete2);
         $donnee['worst']=$query->row();
 
-        //QUartiles et médiane
+
+
+        //Quartiles et médiane
         $requete="SELECT id_eleve,nom_eleve, prenom_eleve, moyenne_eleve
 		FROM eleve
 		WHERE id_classe=".$id." ORDER BY moyenne_eleve;";
@@ -44,17 +43,10 @@ class Classe_m extends CI_Model {
             }
             $i++;
         }
-
-
         $donnee['quartile1']=$quartile1;
         $donnee['mediane']=$mediane;
         $donnee['quartile3']=$quartile3;
 
-
-        //Récuperer note
-        //Les sort croissant
-        //Récup médiane quartiles
-        //Classé élèves
         return $donnee;
     }
 

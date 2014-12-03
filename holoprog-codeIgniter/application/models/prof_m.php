@@ -32,15 +32,39 @@ class Prof_m extends CI_Model {
         $requete="SELECT * FROM classe WHERE id_professeur=".$id.";";
         $query=$this->db->query($requete);
         return $query->result();
+
     }
+
 	
 	public function getAClasse($id)
     {
-        $requete="SELECT e.nom_eleve,e.prenom_eleve, e.date_de_naissance, e.moyenne_eleve
+        $requete="SELECT *
 		FROM eleve e INNER JOIN classe c ON c.id_classe=e.id_classe
 		WHERE c.id_classe=".$id.";";
 		$query=$this->db->query($requete);
 		return $query->result();
 	}
 
+    public function ecarttype($idClasse){
+
+
+
+
+        $requete = "SELECT AVG(moyenne_eleve) as moy FROM eleve where id_classe=".$idClasse.";";
+        $query=$this->db->query($requete);
+        $moyenne=$query->row()->moy;
+
+        $requete="SELECT moyenne_eleve FROM eleve WHERE id_classe=".$idClasse.";";
+        $query=$this->db->query($requete);
+        $data=$query->result();
+
+        $ecarttype=0;
+        $effectif=0;
+        foreach($data as $line){
+            $effectif+=1;
+            $ecarttype+=($line->moyenne_eleve-$moyenne)*($line->moyenne_eleve-$moyenne);
+        }
+
+        return sqrt($ecarttype/$effectif);
+    }
 }

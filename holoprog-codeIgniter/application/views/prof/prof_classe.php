@@ -14,12 +14,28 @@
                         <td><?= $r->prenom_eleve; ?></td>
                         <td><?= date("d-m-Y",strtotime($r->date_de_naissance)); ?></td>
                         <td><?= $r->moyenne_eleve; ?></td>
+                    <?php if(!isset($detailsEleve)): ?>
+                        <td style="text-align: center;"><a href="<?= base_url();?>index.php/client_c/voirEleveFromProf/<?= $r->id_eleve; ?>/<?= $r->id_classe; ?>">Show</a></td>
+                    <?php endif; ?>
+                    <?php if(isset($detailsEleve) and $detailsEleve->id_eleve==$r->id_eleve): ?>
+                        <td style="text-align: center;"><a href="<?= base_url();?>index.php/prof_c/voirClasse/<?= $r->id_classe; ?>">Hide</a></td>
+                        </tr>
+                        <tr >
+                        <td colspan="4">
+                            <?php for($i=0 ; $i<$detailsEleve->niveau_atteint ;$i++): ?>
+                                Exercice <?=$i+1 ?><br>
+                                Moyenne exercice :<br>
+                                Moyenne de classe :<br><br>
+                            <?php endfor; ?>
+                        </td>
+
+                    <?php endif; ?>
                     </tr>
                 <?php endforeach; ?>
             <?php endif; ?>
     </table>
 
-    <?php if(isset($stats)): ?>
+        <!-- TABLEAU MOYENNE -->
 
     <table style ="width:50%;margin-left:20%;" class="table table-bordered" >
         <caption>Statistiques</caption>
@@ -44,6 +60,9 @@
             <td><?= $stats['worst']->nom_eleve; ?></td>
         </tr>
     </table>
+
+
+    <!-- QUARTILES ET MEDIANE -->
     <div style ="width:50%;margin-left:20%;">
         <table style="width:30%;" class="table table-bordered">
             <tr>
@@ -56,7 +75,7 @@
             <?php endforeach; ?>
         </table>
 
-        <table style="position:relative;width:30%;margin-left:35%;" class="table table-bordered">
+        <table style="width:30%;margin-left:35%;" class="table table-bordered">
             <tr>
                <th>Médiane</th>
             </tr>
@@ -77,10 +96,13 @@
                 </tr>
             <?php endforeach; ?>
         </table>
+
     </div>
+    <p style="margin-left:20%;">Ecart-type :<?= $ecarttype; ?></p>
 
-
-    <?php endif; ?>
+    <div>
+    </div>
+    Graphique
 
 
 

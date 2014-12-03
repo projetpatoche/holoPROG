@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>bootstrap/css/component.css" />
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>bootstrap/css/bootstrap.css">
     <script src="<?= base_url(); ?>js/modernizr.custom.js"></script></head>
+
 <body>
 <div id="container">
 
