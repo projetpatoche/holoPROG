@@ -133,6 +133,8 @@ id_exercice INT,
 id_eleve INT,
 erreur_exo varchar(30),
 nb_essais int,
+moyenne_exo float(4,2),
+exo_fait int,
 Foreign key (id_exercice) references exercice(id_exercice),
 Foreign key (id_eleve) references eleve(id_eleve),
 PRIMARY KEY (id_eleve,id_exercice) 
