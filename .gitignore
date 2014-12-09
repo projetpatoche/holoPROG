@@ -1,0 +1,3 @@
+#Exclusion des fichiers config et database
+./holoprog-codeIgniter/application/config/config.php
+./holoprog-codeIgniter/application/config/database.php
