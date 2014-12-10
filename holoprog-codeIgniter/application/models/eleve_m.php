@@ -25,9 +25,9 @@ class Eleve_m extends CI_Model {
     }
 
     public function getDetailsEleveForProf($idEleve){
-        $requete="SELECT * FROM Eleve WHERE id_eleve=".$idEleve.";";
+        $requete="SELECT *, AVG(moyenne_exo) as moyenne_classe_exo FROM solution_exo WHERE id_eleve=".$idEleve." GROUP BY id_exercice;";
         $query=$this->db->query($requete);
-        $data=$query->row();
+        $data=$query->result();
         return $data;
     }
 
