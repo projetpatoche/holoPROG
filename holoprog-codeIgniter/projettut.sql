@@ -92,7 +92,7 @@ CREATE TABLE IF NOT EXISTS `eleve` (
   `nom_eleve` varchar(30),
   `prenom_eleve` varchar(30),
   `niveau_atteint` int,
-  `moyenne_eleve` int,
+  `moyenne_eleve` float(4,2),
   `date_de_naissance` date,
   `id_classe` int,
   `identifiant` int,

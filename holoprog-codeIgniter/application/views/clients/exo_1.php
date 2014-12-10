@@ -55,7 +55,7 @@
 		<input type="submit"  name="act_soumettre" value="Valide"/>
 		</form>
         
-		<form method="post" action="<?= base_url();?>index.php/users_c/deconnexion" >
+		<form method="post" action="<?php echo base_url();?>index.php/users_c/deconnexion" >
 		<input type="submit"  name="act_soumettre" value="Deconnexion"/>
 		</form>
 		</p>

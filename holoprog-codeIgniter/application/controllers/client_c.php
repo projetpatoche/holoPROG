@@ -73,6 +73,7 @@ class Client_c extends CI_Controller {
             if ($erreur['exo_fait'] != 1) {          //empeche le recalcule de la moyenne si l'eleve a deja fini l'exo
                 $this->exo_m->validationExo($id);
                 $this->exo_m->InsertMoyenneExo($id, $moyenne_exo);
+                $this->eleve_m->CalculMoyenneGeneral();
             }
             redirect('client_c/index');
         } else {
@@ -83,6 +84,7 @@ class Client_c extends CI_Controller {
             if ($erreur['exo_fait'] != 1) {
                 $this->exo_m->InsertMoyenneExo($id, $moyenne_exo);
                 $this->exo_m->inscritErreurExo($erreurfinal, $id);
+                $this->eleve_m->CalculMoyenneGeneral();
             }
         }
     }

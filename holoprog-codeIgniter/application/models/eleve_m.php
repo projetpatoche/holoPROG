@@ -31,6 +31,30 @@ class Eleve_m extends CI_Model {
         return $data;
     }
 
+    public function CalculMoyenneGeneral(){
+        $data = $this->eleve_m->DonneeExoTest();
+        $moyennetotal=0;
+        $nbmoy=0;
+        foreach($data as $d){
+            $moyennetotal=$moyennetotal+$d->moyenne_exo;
+            $nbmoy++;
+        }
+        $moyennetotal=$moyennetotal/$nbmoy;
+        $this->eleve_m->insertMoyenne($moyennetotal);
+    }
 
-    
+    public function DonneeExoTest(){
+        $this->db->where('nb_essais >',0);
+        $this->db->where('id_eleve',$this->session->userdata('id_eleve'));
+        $data= $this->db->get("solution_exo");
+        return $data->result();
+    }
+
+    public function insertMoyenne($moyenne){
+        $this->db->set('moyenne_eleve', $moyenne);
+        $this->db->where('id_eleve',$this->session->userdata('id_eleve'));
+        $this->db->update("eleve");
+    }
+
+
 }
