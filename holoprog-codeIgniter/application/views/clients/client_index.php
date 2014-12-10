@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<title><?php echo $titre?></title>
 
-	<link rel="stylesheet" href="<?= base_url(); ?>monCSS/mesStyles1.css" >
+	<link rel="stylesheet" href="<?php echo base_url(); ?>monCSS/mesStyles1.css" >
 </head>
 <body>
 
@@ -17,9 +17,9 @@
 		ECHO $this->session->userdata('nom_eleve');
 		?></h1>
 
-		<a href="<?= base_url(); ?>index.php/client_c/Exo/1">Exo 1</a>
+		<a href="<?php echo base_url(); ?>index.php/client_c/Exo/1">Exo 1</a>
         <p>
-		<form method="post" action="<?= base_url(); ?>index.php/users_c/deconnexion" >
+		<form method="post" action="<?php echo base_url(); ?>index.php/users_c/deconnexion" >
 		<input type="submit"  name="act_soumettre" value="Deconnexion"/>
 		</form>
 		</p>

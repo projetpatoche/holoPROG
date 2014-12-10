@@ -44,22 +44,47 @@ class Client_c extends CI_Controller {
 
     public function correctionExo($id)
     {
+
         $this->exo_m->essaisExoAugmente($id);
-        $donnee['un']=$_POST['1'];
-        $donnee['deux']=$_POST['2'];
-        $donnee['trois']=$_POST['3'];
-        $donnee['quatre']=$_POST['4'];
-        $donnee['cinq']=$_POST['5'];
-
-        $data = $this->exo_m->solutionExo($id);
-
-        $solution=explode('-',$data['correction_exercice']);
-        if($donnee['un']==$solution[0]&&$donnee['deux']==$solution[1]
-            &&$donnee['trois']==$solution[2]&&$donnee['quatre']==$solution[3]
-            &&$donnee['cinq']==$solution[4]){
-            echo "bravo";
+        $data = $this->exo_m->correctionExo($id);
+        $erreur = $this->exo_m->erreurExo($id);
+        for ($i = 0; $i < $data['taille_exo']; $i++) { //la boucle sert a recuperer les entree quelle que soit la taille de l'exo
+            $donnee[$i] = $_POST[$i];
         }
 
+        $nbreussi = 0;   // variable pour voir combien l'eleve a reussi de champs
+
+        $solution = explode('-', $data['correction_exercice']);
+        $nberreur = explode('-', $erreur['erreur_exo']);
+
+        $nberreurtotal = 0;
+        for ($i = 0; $i < $data['taille_exo']; $i++) { //la boucle sert a recuperer les entree quelle que soit la taille de l'exo
+            if ($donnee[$i] == $solution[$i]) {
+                $nbreussi = $nbreussi + 1;
+            } else {
+                $nberreur[$i] = $nberreur[$i] + 1;
+            }
+            $nberreurtotal += $nberreur[$i];
+        }
+
+        $moyenne_exo = 20 - 20 * $nberreurtotal / ($erreur['nb_essais'] * $data['taille_exo']);
+
+        if ($nbreussi == $data['taille_exo']) { //si la personne a tout juste
+            if ($erreur['exo_fait'] != 1) {          //empeche le recalcule de la moyenne si l'eleve a deja fini l'exo
+                $this->exo_m->validationExo($id);
+                $this->exo_m->InsertMoyenneExo($id, $moyenne_exo);
+            }
+            redirect('client_c/index');
+        } else {
+            $erreurfinal = $nberreur[0]; //sinon reinsere les erreurs dans un string puis dans la table
+            for ($i = 1; $i < $data['taille_exo']; $i++) {
+                $erreurfinal = $erreurfinal . "-" . $nberreur[$i];
+            }
+            if ($erreur['exo_fait'] != 1) {
+                $this->exo_m->InsertMoyenneExo($id, $moyenne_exo);
+                $this->exo_m->inscritErreurExo($erreurfinal, $id);
+            }
+        }
     }
 
     public function voirEleveFromProf($idEleve,$idClasse){

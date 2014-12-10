@@ -31,37 +31,67 @@ class Exo_m extends CI_Model {
 			}
 			
 			$requete="insert into solution_exo 
-			values(\"".$id_exercice."\",\"".$this->session->userdata('id_eleve')."\",\"".$erreur."\", 0)";
+			values(\"".$id_exercice."\",\"".$this->session->userdata('id_eleve')."\",\"".$erreur."\", 0,0,0)";
 			$query=$this->db->query($requete); //cree le champs
 		}
 	}
-	
-	public function solutionExo($id)
-	{
-	$requete="SELECT correction_exercice
-			from exercice 
-			where id_exercice=\"".$id."\"";
-			$exo=$this->db->query($requete);
-			$row = $exo->row_array();
-	return $row;
-	}
-	
-	public function essaisExoAugmente($id)
-	{
-	//augmente le nombre d'essais d'un eleve pour l'exo en id
-	$requete="SELECT nb_essais
+
+    public function erreurExo($id)//recupere solution_exo
+    {
+        $this->db->where('id_exercice',$id);
+        $this->db->where('id_eleve',$this->session->userdata('id_eleve'));
+        $exo=$this->db->get('solution_exo');
+        $row = $exo->row_array();
+        return $row;
+    }
+
+    public function inscritErreurExo($erreur,$id)//change le nombre de mauvaise reponse
+    {
+        $data=array('erreur_exo'=>$erreur);
+        $this->db->where('id_exercice',$id);
+        $this->db->where('id_eleve',$this->session->userdata('id_eleve'));
+        $this->db->update('solution_exo', $data);
+    }
+
+    public function correctionExo($id)
+    {
+        $this->db->where('id_exercice',$id);
+        $exo=$this->db->get('exercice');
+        $row = $exo->row_array();
+        return $row;
+    }
+
+    public function essaisExoAugmente($id)
+    {
+        //augmente le nombre d'essais d'un eleve pour l'exo en id
+        $requete="SELECT nb_essais
 		FROM solution_exo
 		where id_exercice=\"".$id."\"
-		and id_eleve=\"".$this->session->userdata('id_eleve')."\"";	
-	$exo=$this->db->query($requete);
-	$row = $exo->row_array();
-	$nb_essais = $row['nb_essais']+1;
-	
-	$requete="Update solution_exo set nb_essais=\"".$nb_essais."\" 
+		and id_eleve=\"".$this->session->userdata('id_eleve')."\"";
+        $exo=$this->db->query($requete);
+        $row = $exo->row_array();
+        $nb_essais = $row['nb_essais']+1;
+
+        $requete="Update solution_exo set nb_essais=\"".$nb_essais."\"
 		where id_exercice=\"".$id."\"
 		and id_eleve=\"".$this->session->userdata('id_eleve')."\"";
-	$this->db->query($requete);
-	}
+        $this->db->query($requete);
+    }
+
+    public function validationExo($id)
+    {
+        $this->db->set('exo_fait', 1);
+        $this->db->where('id_exercice',$id);
+        $this->db->where('id_eleve',$this->session->userdata('id_eleve'));
+        $this->db->update("solution_exo");
+    }
+
+    public function InsertMoyenneExo($id,$moyenne_exo){
+        $this->db->set('moyenne_exo', $moyenne_exo);
+        $this->db->where('id_exercice',$id);
+        $this->db->where('id_eleve',$this->session->userdata('id_eleve'));
+        $this->db->update("solution_exo");
+    }
 
 
     
