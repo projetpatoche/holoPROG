@@ -17,16 +17,19 @@
                     <?php if(!isset($detailsEleve)): ?>
                         <td style="text-align: center;"><a href="<?= base_url();?>index.php/client_c/voirEleveFromProf/<?= $r->id_eleve; ?>/<?= $r->id_classe; ?>">Show</a></td>
                     <?php endif; ?>
-                    <?php if(isset($detailsEleve) and $detailsEleve->id_eleve==$r->id_eleve): ?>
+                    <?php if(isset($detailsEleve) and $detailsEleve[0]->id_eleve==$r->id_eleve): ?>
+                       <!-- verification de l'existence du details Elev eet spécification pour savoir de quel élève on parle -->
                         <td style="text-align: center;"><a href="<?= base_url();?>index.php/prof_c/voirClasse/<?= $r->id_classe; ?>">Hide</a></td>
                         </tr>
                         <tr >
                         <td colspan="4">
-                            <?php for($i=0 ; $i<$detailsEleve->niveau_atteint ;$i++): ?>
-                                Exercice <?=$i+1 ?><br>
-                                Moyenne exercice :<br>
-                                Moyenne de classe :<br><br>
-                            <?php endfor; ?>
+                            <?php foreach($detailsEleve as $unExo): ?>
+                                <?php if($unExo->id_eleve==$r->id_eleve): ?>
+                                Exercice <?= $unExo->id_exercice; ?><br>
+                                Moyenne exercice : <?= $unExo->moyenne_exo; ?><br>
+                                Moyenne de classe :<?= $unExo->moyenne_classe_exo; ?><br><br>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
                         </td>
 
                     <?php endif; ?>

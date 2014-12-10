@@ -90,17 +90,19 @@ class Client_c extends CI_Controller {
     public function voirEleveFromProf($idEleve,$idClasse){
         $this->load->view('prof/prof_head');
         $this->load->view('prof/prof_header_de_page');
+        //LIste des classes du prof
         $data['listeClasses']=$this->prof_m->getClasses($this->session->userdata('id_professeur'));
         $this->load->view('prof/prof_liste_classes', $data);
 
+        //Contenu d'une classe
         $data['classe'] = $this->prof_m->getAClasse($idClasse);
 
-
+        //Statisitque de cette classe
         $data['stats'] = $this->classe_m->getStatProf($idClasse);
 
+        //Details sur l'élève sélectionné
         $data['detailsEleve'] = $this->eleve_m->getDetailsEleveForProf($idEleve);
         $this->load->view('prof/prof_classe', $data);
-
         $this->load->view('prof/prof_foot');
     }
 }
