@@ -10,7 +10,6 @@ class Client_c extends CI_Controller {
     }
     public function index()
     {
-
         $id= $this->session->userdata('identifiant');
         if($this->session->userdata('droit')!=1){
             redirect('user_c');
@@ -38,8 +37,11 @@ class Client_c extends CI_Controller {
     }
     public function Exo($id)
     {
-        $donnee['titre']='Exo 1';
+        $donnee['titre']='Exercice numéro 1';
+        $this->load->view('clients/client_head');
+        $this->load->view('clients/client_menu');
         $this->load->view('clients/exo_1',$donnee);
+        $this->load->view('clients/client_foot');
     }
 
     public function correctionExo($id)
