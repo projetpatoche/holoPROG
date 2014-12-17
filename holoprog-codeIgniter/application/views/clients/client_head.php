@@ -10,8 +10,15 @@
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>bootstrap/css/default.css" />
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>bootstrap/css/component.css" />
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>bootstrap/css/bootstrap.css">
-    <script src="<?= base_url(); ?>bootstrap/js/modernizr.custom.js"></script></head>
+    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>bootstrap/css/personnalisation.css">
+
+
+    <script src="<?= base_url(); ?>bootstrap/js/modernizr.custom.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <script src="<?= base_url(); ?>js/jquery.sortable.js"></script>
+</head>
 <body>
-<div id="container">
 
 		
