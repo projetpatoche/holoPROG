@@ -1,7 +1,19 @@
 .list-reponse{
     background-color:#428BCA;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .list-question{
     background-color:#E9931A;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bloc_condition{
+    background-image: url('../../img/bloc_condition.png');
+    padding:15px;
+    background-size: cover;
 }
