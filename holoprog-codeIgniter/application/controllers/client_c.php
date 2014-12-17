@@ -10,7 +10,6 @@ class Client_c extends CI_Controller {
     }
     public function index()
     {
-
         $id= $this->session->userdata('identifiant');
         if($this->session->userdata('droit')!=1){
             redirect('user_c');
@@ -38,8 +37,11 @@ class Client_c extends CI_Controller {
     }
     public function Exo($id)
     {
-        $donnee['titre']='Exo 1';
+        $donnee['titre']='Exercice numéro 1';
+        $this->load->view('clients/client_head');
+        $this->load->view('clients/client_menu');
         $this->load->view('clients/exo_1',$donnee);
+        $this->load->view('clients/client_foot');
     }
 
     public function correctionExo($id)
@@ -73,6 +75,7 @@ class Client_c extends CI_Controller {
             if ($erreur['exo_fait'] != 1) {          //empeche le recalcule de la moyenne si l'eleve a deja fini l'exo
                 $this->exo_m->validationExo($id);
                 $this->exo_m->InsertMoyenneExo($id, $moyenne_exo);
+                $this->eleve_m->CalculMoyenneGeneral();
             }
             redirect('client_c/index');
         } else {
@@ -83,6 +86,7 @@ class Client_c extends CI_Controller {
             if ($erreur['exo_fait'] != 1) {
                 $this->exo_m->InsertMoyenneExo($id, $moyenne_exo);
                 $this->exo_m->inscritErreurExo($erreurfinal, $id);
+                $this->eleve_m->CalculMoyenneGeneral();
             }
         }
     }
