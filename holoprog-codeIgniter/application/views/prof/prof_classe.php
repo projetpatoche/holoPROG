@@ -4,7 +4,6 @@
                 <tr>
                     <th>Nom</th>
                     <th>Prénom</th>
-                    <th>Date de naissance</th>
                     <th>Moyenne</th>
                 </tr>
                 <?php if($classe != null): ?>
@@ -12,7 +11,6 @@
                         <tr>
                             <td><?= $r->nom_eleve; ?></td>
                             <td><?= $r->prenom_eleve; ?></td>
-                            <td><?= date("d-m-Y",strtotime($r->date_de_naissance)); ?></td>
                             <td><?= $r->moyenne_eleve; ?></td>
                         <?php if(!isset($detailsEleve)): ?>
                             <td style="text-align: center;"><a href="<?= base_url();?>index.php/client_c/voirEleveFromProf/<?= $r->id_eleve; ?>/<?= $r->id_classe; ?>">Show</a></td>
