@@ -25,10 +25,20 @@ class Eleve_m extends CI_Model {
     }
 
     public function getDetailsEleveForProf($idEleve){
-        $requete="SELECT *, AVG(moyenne_exo) as moyenne_classe_exo FROM solution_exo WHERE id_eleve=".$idEleve." GROUP BY id_exercice;";
+        $requete="SELECT * FROM solution_exo WHERE id_eleve=".$idEleve.";";
         $query=$this->db->query($requete);
         $data=$query->result();
-        return $data;
+
+        //Calcul moyenne de classe par exercice
+        $requete = "SELECT id_classe FROM eleve WHERE id_eleve=".$idEleve.";";
+        $classeEleve=$this->db->query($requete)->row();
+        $requete="SELECT AVG(se.moyenne_exo) as moyenne_classe_exo FROM solution_exo se, eleve
+                  WHERE se.id_eleve=".$idEleve." AND eleve.id_classe=".$classeEleve->id_classe." GROUP BY eleve.id_classe;";
+        $moyenne = $this->db->query($requete)->row()->moyenne_classe_exo;
+        $datas['donnee']=$data;
+        $datas['moyenne']=$moyenne;
+
+        return $datas;
     }
 
     public function CalculMoyenneGeneral(){
@@ -54,6 +64,13 @@ class Eleve_m extends CI_Model {
         $this->db->set('moyenne_eleve', $moyenne);
         $this->db->where('id_eleve',$this->session->userdata('id_eleve'));
         $this->db->update("eleve");
+    }
+
+    public function aFaitUnExo($id){
+        $requete = "SELECT * FROM solution_exo WHERE id_eleve=".$id.";";
+        $res = $this->db->query($requete)->row();
+        if(isset($res->id_eleve)) return true;
+        else return false;
     }
 
 

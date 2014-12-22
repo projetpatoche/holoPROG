@@ -28,6 +28,13 @@ class Prof_c extends CI_Controller {
 	public function voirClasse($idClasse)
 	{
         $this->load->view('prof/prof_head');
+
+        //identifiant de la table connexion
+        $data = $this->prof_m->donneeProf($this->session->userdata('identifiant'));
+        //on détermine l'id du prof grâce à $data
+        $this->session->set_userdata($data);
+        $this->load->view('prof/prof_menu');
+
         $this->load->view('prof/prof_header_de_page');
         $data['listeClasses']=$this->prof_m->getClasses($this->session->userdata('id_professeur'));
         $this->load->view('prof/prof_liste_classes', $data);

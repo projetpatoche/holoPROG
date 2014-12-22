@@ -12,20 +12,26 @@
                             <td><?= $r->nom_eleve; ?></td>
                             <td><?= $r->prenom_eleve; ?></td>
                             <td><?= $r->moyenne_eleve; ?></td>
-                        <?php if(!isset($detailsEleve)): ?>
-                            <td style="text-align: center;"><a href="<?= base_url();?>index.php/client_c/voirEleveFromProf/<?= $r->id_eleve; ?>/<?= $r->id_classe; ?>">Show</a></td>
+
+
+                        <?php if(!isset($detailsEleve) and eleve_m::aFaitUnExo($r->id_eleve)): ?>
+                            <td style="text-align: center;"><a href="<?= base_url();?>index.php/client_c/voirEleveFromProf/<?= $r->id_eleve; ?>/<?= $r->id_classe; ?>">
+                                    Show</a></td>
                         <?php endif; ?>
+
                         <?php if(isset($detailsEleve) and $detailsEleve[0]->id_eleve==$r->id_eleve): ?>
+
                            <!-- verification de l'existence du details Elev eet spécification pour savoir de quel élève on parle -->
                             <td style="text-align: center;"><a href="<?= base_url();?>index.php/prof_c/voirClasse/<?= $r->id_classe; ?>">Hide</a></td>
                             </tr>
                             <tr >
+
                             <td colspan="4">
                                 <?php foreach($detailsEleve as $unExo): ?>
                                     <?php if($unExo->id_eleve==$r->id_eleve): ?>
                                     Exercice <?= $unExo->id_exercice; ?><br>
                                     Moyenne exercice : <?= $unExo->moyenne_exo; ?><br>
-                                    Moyenne de classe :<?= $unExo->moyenne_classe_exo; ?><br><br>
+                                    Moyenne de classe :<?= $moyenne_classe_by_exo; ?><br><br>
                                     <?php endif; ?>
                                 <?php endforeach; ?>
                             </td>

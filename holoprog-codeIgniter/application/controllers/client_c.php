@@ -93,6 +93,12 @@ class Client_c extends CI_Controller {
 
     public function voirEleveFromProf($idEleve,$idClasse){
         $this->load->view('prof/prof_head');
+        //identifiant de la table connexion
+        $data = $this->prof_m->donneeProf($this->session->userdata('identifiant'));
+        //on détermine l'id du prof grâce à $data
+        $this->session->set_userdata($data);
+        $this->load->view('prof/prof_menu');
+
         $this->load->view('prof/prof_header_de_page');
         //LIste des classes du prof
         $data['listeClasses']=$this->prof_m->getClasses($this->session->userdata('id_professeur'));
@@ -105,7 +111,8 @@ class Client_c extends CI_Controller {
         $data['stats'] = $this->classe_m->getStatProf($idClasse);
 
         //Details sur l'élève sélectionné
-        $data['detailsEleve'] = $this->eleve_m->getDetailsEleveForProf($idEleve);
+        $data['detailsEleve'] = $this->eleve_m->getDetailsEleveForProf($idEleve)['donnee'];
+        $data['moyenne_classe_by_exo']= $this->eleve_m->getDetailsEleveForProf($idEleve)['moyenne'];
         $this->load->view('prof/prof_classe', $data);
         $this->load->view('prof/prof_foot');
     }
