@@ -97,12 +97,11 @@ class Client_c extends CI_Controller {
         $data = $this->prof_m->donneeProf($this->session->userdata('identifiant'));
         //on détermine l'id du prof grâce à $data
         $this->session->set_userdata($data);
-        $this->load->view('prof/prof_menu');
 
-        $this->load->view('prof/prof_header_de_page');
+
         //LIste des classes du prof
         $data['listeClasses']=$this->prof_m->getClasses($this->session->userdata('id_professeur'));
-        $this->load->view('prof/prof_liste_classes', $data);
+        $this->load->view('prof/prof_menu', $data);
 
         //Contenu d'une classe
         $data['classe'] = $this->prof_m->getAClasse($idClasse);
@@ -113,6 +112,7 @@ class Client_c extends CI_Controller {
         //Details sur l'élève sélectionné
         $data['detailsEleve'] = $this->eleve_m->getDetailsEleveForProf($idEleve)['donnee'];
         $data['moyenne_classe_by_exo']= $this->eleve_m->getDetailsEleveForProf($idEleve)['moyenne'];
+        $data['ecarttype'] = $this->prof_m->ecartType($idClasse);
         $this->load->view('prof/prof_classe', $data);
         $this->load->view('prof/prof_foot');
     }

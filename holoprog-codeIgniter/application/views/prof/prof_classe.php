@@ -1,6 +1,6 @@
     <div class="row" >
-        <table style ="width:50%;margin-left:20%;" class="table table-bordered" >
-            <caption>Liste de vos eleves</caption>
+        <table style ="width:70%;margin-left:15%;" class="table table-bordered" >
+            <caption><h3>Liste de vos eleves</h3></caption>
                 <tr>
                     <th>Nom</th>
                     <th>Prénom</th>
@@ -8,8 +8,8 @@
                 </tr>
                 <?php if($classe != null): ?>
                     <?php foreach ($classe as $r): ?>
-                        <tr>
-                            <td><?= $r->nom_eleve; ?></td>
+                        <tr class="active">
+                            <td ><?= $r->nom_eleve; ?></td>
                             <td><?= $r->prenom_eleve; ?></td>
                             <td><?= $r->moyenne_eleve; ?></td>
 

@@ -26,12 +26,11 @@
                 </a>
             </li>
             <li>
-                <a href="#">
-								<span class="icon">
-									<i aria-hidden="true" class="icon-blog"></i>
-								</span>
-                    <span>Patoche</span>
-                </a>
+            <?php foreach($listeClasses as $classe): ?>
+
+                Vos classes
+                <a href="<?= base_url();?>/index.php/prof_c/voirClasse/<?= $classe->id_classe; ?>"><?= $classe->nom_classe; ?></a>
+            <?php endforeach; ?>
             </li>
             <li>
                 <a href="#">
