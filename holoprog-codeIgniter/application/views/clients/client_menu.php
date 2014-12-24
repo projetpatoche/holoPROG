@@ -10,7 +10,7 @@
                 </a>
             </li>
             <li>
-                <a href="<?= base_url(); ?>index.php/prof_c/">
+                <a href="<?php echo base_url(); ?>index.php/prof_c/">
 								<span class="icon">
 									<i aria-hidden="true" class="icon-services"></i>
 								</span>
@@ -42,7 +42,7 @@
                 </a>
             </li>
             <li>
-                <a href="<?= base_url(); ?>index.php/users_c/deconnexion">
+                <a href="<?php echo base_url(); ?>index.php/users_c/deconnexion">
 								<span class="icon">
 									<i aria-hidden="true" class="icon"></i>
 								</span>

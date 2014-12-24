@@ -63,7 +63,7 @@ class Users_c extends CI_Controller {
         if( $this->session->userdata('droit')==1){
             redirect('client_c');
         }
-        print_r($this->session->all_userdata());
+
         $donnees['titre']="deconnexion";
         $this->load->view('users_index',$donnees);
     }

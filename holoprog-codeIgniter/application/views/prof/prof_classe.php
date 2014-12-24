@@ -1,71 +1,73 @@
-    <div class="row" >
-        <table style ="width:70%;margin-left:15%;" class="table table-bordered" >
-            <caption><h3>Liste de vos eleves</h3></caption>
+<div class="row" >
+    <table style ="width:50%;margin-left:20%;" class="table table-bordered" >
+        <caption>Liste de vos eleves</caption>
+        <tr>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Moyenne</th>
+        </tr>
+        <?php if($classe != null): ?>
+            <?php foreach ($classe as $r): ?>
                 <tr>
-                    <th>Nom</th>
-                    <th>Prénom</th>
-                    <th>Moyenne</th>
-                </tr>
-                <?php if($classe != null): ?>
-                    <?php foreach ($classe as $r): ?>
-                        <tr class="active">
-                            <td ><?= $r->nom_eleve; ?></td>
-                            <td><?= $r->prenom_eleve; ?></td>
-                            <td><?= $r->moyenne_eleve; ?></td>
+                <td><?php echo $r->nom_eleve; ?></td>
+                <td><?php echo $r->prenom_eleve; ?></td>
+                <td><?php echo $r->moyenne_eleve; ?></td>
 
 
-                        <?php if(!isset($detailsEleve) and eleve_m::aFaitUnExo($r->id_eleve)): ?>
-                            <td style="text-align: center;"><a href="<?= base_url();?>index.php/client_c/voirEleveFromProf/<?= $r->id_eleve; ?>/<?= $r->id_classe; ?>">
-                                    Show</a></td>
-                        <?php endif; ?>
-
-                        <?php if(isset($detailsEleve) and $detailsEleve[0]->id_eleve==$r->id_eleve): ?>
-
-                           <!-- verification de l'existence du details Elev eet spécification pour savoir de quel élève on parle -->
-                            <td style="text-align: center;"><a href="<?= base_url();?>index.php/prof_c/voirClasse/<?= $r->id_classe; ?>">Hide</a></td>
-                            </tr>
-                            <tr >
-
-                            <td colspan="4">
-                                <?php foreach($detailsEleve as $unExo): ?>
-                                    <?php if($unExo->id_eleve==$r->id_eleve): ?>
-                                    Exercice <?= $unExo->id_exercice; ?><br>
-                                    Moyenne exercice : <?= $unExo->moyenne_exo; ?><br>
-                                    Moyenne de classe :<?= $moyenne_classe_by_exo; ?><br><br>
-                                    <?php endif; ?>
-                                <?php endforeach; ?>
-                            </td>
-
-                        <?php endif; ?>
-                        </tr>
-                    <?php endforeach; ?>
+                <?php if(!isset($detailsEleve) and eleve_m::aFaitUnExo($r->id_eleve)): ?>
+                    <td style="text-align: center;"><a href="<?php echo base_url();?>index.php/client_c/voirEleveFromProf/<?php echo $r->id_eleve; ?>/<?php echo $r->id_classe; ?>">
+                            Show</a></td>
                 <?php endif; ?>
-        </table>
+
+                <?php if(isset($detailsEleve) and $detailsEleve[0]->id_eleve==$r->id_eleve): ?>
+
+                    <!-- verification de l'existence du details Elev eet spécification pour savoir de quel élève on parle -->
+                    <td style="text-align: center;"><a href="<?php echo base_url();?>index.php/prof_c/voirClasse/<?php echo $r->id_classe; ?>">Hide</a></td>
+                    </tr>
+                    <tr >
+
+                    <td colspan="4">
+                        <?php foreach($detailsEleve as $unExo): ?>
+                            <?php if($unExo->id_eleve==$r->id_eleve): ?>
+                                Exercice <?php echo $unExo->id_exercice; ?><br>
+                                Moyenne exercice : <?php if($unExo->nb_essais<=0) echo "L'eleve n'a jamais essaye l'exercice";
+                                else echo $unExo->moyenne_exo; ?><br>
+                                Moyenne de classe :<?php if($unExo->moyenne_exo_classe==null) echo "Aucun eleve de la classe n'a fait l'exercice";
+                                else echo $unExo->moyenne_exo_classe; ?><br><br>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    </td>
+
+                <?php endif; ?>
+                </tr>
+            <?php endforeach; ?>
+        <?php endif; ?>
+    </table>
 
 
-            <!-- TABLEAU MOYENNE -->
+    <!-- TABLEAU MOYENNE -->
 
-        <table style ="width:50%;margin-left:20%;" class="table table-bordered" >
-            <caption>Statistiques</caption>
-            <tr>
-                <th></th>
-                <th>Note</th>
-                <th rowspan="2">Éleve</th>
+    <table style ="width:50%;margin-left:20%;" class="table table-bordered" >
+        <caption>Statistiques</caption>
+        <tr>
+            <th></th>
+            <th>Note</th>
+            <th rowspan="2">Éleve</th>
 
             </tr>
             <tr>
                 <td>Moyenne de classe</td>
-                <td><?= $stats['moyenne_classe']; ?></td>
+                <td><?php echo $stats['moyenne_classe']; ?></td>
             </tr>
             <tr>
                 <td>Meilleur élève</td>
-                <td><?= $stats['best']->moyenne_eleve; ?></td>
-                <td><?= $stats['best']->nom_eleve; ?></td>
+                <td><?php echo $stats['best']->moyenne_eleve; ?></td>
+                <td><?php echo $stats['best']->nom_eleve; ?></td>
             </tr>
             <tr>
                 <td>Moins bon élève</td>
-                <td><?= $stats['worst']->moyenne_eleve; ?></td>
-                <td><?= $stats['worst']->nom_eleve; ?></td>
+                <td><?php echo $stats['worst']->moyenne_eleve; ?></td>
+                <td><?php echo $stats['worst']->nom_eleve; ?></td>
             </tr>
         </table>
     </div>
@@ -80,7 +82,7 @@
                     </tr>
                     <?php foreach($stats['quartile1'] as $line): ?>
                     <tr>
-                        <td><?= $line->prenom_eleve." ".$line->nom_eleve." - ".$line->moyenne_eleve."\\20"; ?></td>
+                        <td><?php echo $line->prenom_eleve." ".$line->nom_eleve." - ".$line->moyenne_eleve."\\20"; ?></td>
                     </tr>
                     <?php endforeach; ?>
                 </table>
@@ -93,7 +95,7 @@
                     </tr>
                     <?php foreach($stats['mediane'] as $line): ?>
                     <tr>
-                        <td><?= $line->prenom_eleve." ".$line->nom_eleve." - ".$line->moyenne_eleve."\\20"; ?></td>
+                        <td><?php echo $line->prenom_eleve." ".$line->nom_eleve." - ".$line->moyenne_eleve."\\20"; ?></td>
                     </tr>
                     <?php endforeach; ?>
                 </table>
@@ -106,7 +108,7 @@
                     </tr>
                     <?php foreach($stats['quartile3'] as $line): ?>
                     <tr>
-                        <td><?= $line->prenom_eleve." ".$line->nom_eleve." - ".$line->moyenne_eleve."\\20"; ?></td>
+                        <td><?php echo $line->prenom_eleve." ".$line->nom_eleve." - ".$line->moyenne_eleve."\\20"; ?></td>
                     </tr>
                     <?php endforeach; ?>
                 </table>
@@ -114,7 +116,7 @@
         </div>
 
     <div>
-    <p style="margin-left:20%;">Ecart-type :<?= $ecarttype; ?></p>
+    <p style="margin-left:20%;">Ecart-type :<?php echo $ecarttype; ?></p>
     </div>
 
 

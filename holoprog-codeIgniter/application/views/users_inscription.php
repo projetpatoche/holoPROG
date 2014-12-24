@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title><?= $titre?></title>
-	<link rel="stylesheet" href="<?= base_url(); ?>monCSS/mesStyles1.css" >
+	<title><?php echo $titre?></title>
+	<link rel="stylesheet" href="<?php echo base_url(); ?>monCSS/mesStyles1.css" >
 </head>
 <body>
 
@@ -23,19 +23,19 @@
         <br>
 
         <label for="pass">Mot de passe:</label>
-        <input type="password" name="pass" value="<?= set_value('pass');?>" />
+        <input type="password" name="pass" value="<?php echo set_value('pass');?>" />
         <?php echo form_error('pass','<span class="error">',"</span>");?>
         <br>
         <label for="pass2">confirmation Mot de passe:</label>
-        <input type="password" name="pass2" value="<?= set_value('pass2');?>" />
+        <input type="password" name="pass2" value="<?php echo set_value('pass2');?>" />
         <?php echo form_error('pass2','<span class="error">',"</span>");?>
         <br>
         <?php if(isset($erreur))echo '<span class="error">'.$erreur."</span>";?>
         <input type="submit" value="Envoyer" />
 
         <?php echo form_close(); ?>
-		<p><?= anchor('users_c/deconnexion','se connecter')?></p>
-        <p><?= anchor('users_c/mdp_oublie','Mot de passe oublié ?')?></p>
+		<p><?php echo anchor('users_c/deconnexion','se connecter')?></p>
+        <p><?php echo anchor('users_c/mdp_oublie','Mot de passe oublié ?')?></p>
 	</div>
 
 	<p class="footer">DUT info Belfort <strong>{elapsed_time}</strong> seconds</p>

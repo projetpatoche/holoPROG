@@ -25,11 +25,11 @@ class Exo_m extends CI_Model {
 			where id_exercice=\"".$id_exercice."\"";
 			$exo=$this->db->query($requete);
 			$row = $exo->row_array();
-			$erreur="0";
+			$erreur="0-0-0";
 			for($i=1;$i<$row['taille_exo'];$i++){ //calcul la taille de l'exercice et 
-			$erreur=$erreur."-0";				//cree une varchar adapte
+			$erreur=$erreur."/0-0-0";				//cree une varchar adapte
 			}
-			
+
 			$requete="insert into solution_exo 
 			values(\"".$id_exercice."\",\"".$this->session->userdata('id_eleve')."\",\"".$erreur."\", 0,0,0)";
 			$query=$this->db->query($requete); //cree le champs

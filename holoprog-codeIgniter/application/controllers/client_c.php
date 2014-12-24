@@ -37,10 +37,10 @@ class Client_c extends CI_Controller {
     }
     public function Exo($id)
     {
-        $donnee['titre']='Exercice numéro 1';
+        $donnee['titre']='Exercice numéro '.$id;
         $this->load->view('clients/client_head');
         $this->load->view('clients/client_menu');
-        $this->load->view('clients/exo_1',$donnee);
+        $this->load->view('clients/exo_'.$id,$donnee);
         $this->load->view('clients/client_foot');
     }
 
@@ -57,16 +57,25 @@ class Client_c extends CI_Controller {
         $nbreussi = 0;   // variable pour voir combien l'eleve a reussi de champs
 
         $solution = explode('-', $data['correction_exercice']);
-        $nberreur = explode('-', $erreur['erreur_exo']);
+        $nberreur = explode('/', $erreur['erreur_exo']);
 
         $nberreurtotal = 0;
         for ($i = 0; $i < $data['taille_exo']; $i++) { //la boucle sert a recuperer les entree quelle que soit la taille de l'exo
+            $erreurpecifique = explode('-',$nberreur[$i]);
             if ($donnee[$i] == $solution[$i]) {
                 $nbreussi = $nbreussi + 1;
-            } else {
-                $nberreur[$i] = $nberreur[$i] + 1;
+            } else {//si l'erreur est a zero c'est donc la bonne reponse   /!\ pour les statistique precise faire nb_essais - nb erreur enregistrer
+                if($donnee[$i]==1)
+                    $erreurpecifique[0] = $erreurpecifique[0] + 1;
+                if($donnee[$i]==2)
+                    $erreurpecifique[1] = $erreurpecifique[1] + 1;
+                if($donnee[$i]==3)
+                    $erreurpecifique[2] = $erreurpecifique[2] + 1;
+                $nberreur[$i]=$erreurpecifique[0].'-'.$erreurpecifique[1].'-'.$erreurpecifique[2];
+
             }
-            $nberreurtotal += $nberreur[$i];
+            $nberreurselect=$erreurpecifique[0]+$erreurpecifique[1]+$erreurpecifique[2];
+            $nberreurtotal += $nberreurselect;
         }
 
         $moyenne_exo = 20 - 20 * $nberreurtotal / ($erreur['nb_essais'] * $data['taille_exo']);
@@ -75,18 +84,18 @@ class Client_c extends CI_Controller {
             if ($erreur['exo_fait'] != 1) {          //empeche le recalcule de la moyenne si l'eleve a deja fini l'exo
                 $this->exo_m->validationExo($id);
                 $this->exo_m->InsertMoyenneExo($id, $moyenne_exo);
-                $this->eleve_m->CalculMoyenneGeneral();
+                $this->eleve_m->insertMoyenne($this->session->userdata('id_eleve'));
             }
             redirect('client_c/index');
         } else {
             $erreurfinal = $nberreur[0]; //sinon reinsere les erreurs dans un string puis dans la table
             for ($i = 1; $i < $data['taille_exo']; $i++) {
-                $erreurfinal = $erreurfinal . "-" . $nberreur[$i];
+                $erreurfinal = $erreurfinal . "/" . $nberreur[$i];
             }
             if ($erreur['exo_fait'] != 1) {
                 $this->exo_m->InsertMoyenneExo($id, $moyenne_exo);
                 $this->exo_m->inscritErreurExo($erreurfinal, $id);
-                $this->eleve_m->CalculMoyenneGeneral();
+                $this->eleve_m->insertMoyenne($this->session->userdata('id_eleve'));
             }
         }
     }
@@ -108,11 +117,11 @@ class Client_c extends CI_Controller {
 
         //Statisitque de cette classe
         $data['stats'] = $this->classe_m->getStatProf($idClasse);
+        $data['ecarttype'] = $this->prof_m->ecartType($idClasse);
 
         //Details sur l'élève sélectionné
-        $data['detailsEleve'] = $this->eleve_m->getDetailsEleveForProf($idEleve)['donnee'];
-        $data['moyenne_classe_by_exo']= $this->eleve_m->getDetailsEleveForProf($idEleve)['moyenne'];
-        $data['ecarttype'] = $this->prof_m->ecartType($idClasse);
+        $donnee= $this->eleve_m->getDetailsEleveForProf($idEleve);
+        $data['detailsEleve']= $donnee['donnee'];
         $this->load->view('prof/prof_classe', $data);
         $this->load->view('prof/prof_foot');
     }

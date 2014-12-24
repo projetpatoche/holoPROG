@@ -7,7 +7,7 @@ class Eleve_m extends CI_Model {
 		FROM eleve
 		WHERE identifiant=\"".$id."\"
 		limit 1";
-		 $query=$this->db->query($requete);
+		$query=$this->db->query($requete);
         $row = $query->row_array();
 		
 		return $row;
@@ -25,42 +25,24 @@ class Eleve_m extends CI_Model {
     }
 
     public function getDetailsEleveForProf($idEleve){
-        $requete="SELECT * FROM solution_exo WHERE id_eleve=".$idEleve.";";
-        $query=$this->db->query($requete);
-        $data=$query->result();
-
-        //Calcul moyenne de classe par exercice
         $requete = "SELECT id_classe FROM eleve WHERE id_eleve=".$idEleve.";";
         $classeEleve=$this->db->query($requete)->row();
-        $requete="SELECT AVG(se.moyenne_exo) as moyenne_classe_exo FROM solution_exo se, eleve
-                  WHERE se.id_eleve=".$idEleve." AND eleve.id_classe=".$classeEleve->id_classe." GROUP BY eleve.id_classe;";
-        $moyenne = $this->db->query($requete)->row()->moyenne_classe_exo;
-        $datas['donnee']=$data;
-        $datas['moyenne']=$moyenne;
 
+        $requete="SELECT * ,(SELECT AVG(se.moyenne_exo) FROM solution_exo se, eleve WHERE eleve.id_classe=".$classeEleve->id_classe."
+        and eleve.id_eleve=se.id_eleve and se.id_exercice=sa.id_exercice and nb_essais > 0)
+        as moyenne_exo_classe FROM solution_exo sa WHERE id_eleve=".$idEleve." GROUP BY id_exercice;";
+        $query=$this->db->query($requete);
+
+        $data=$query->result();
+
+        $datas['donnee']=$data;
         return $datas;
     }
 
-    public function CalculMoyenneGeneral(){
-        $data = $this->eleve_m->DonneeExoTest();
-        $moyennetotal=0;
-        $nbmoy=0;
-        foreach($data as $d){
-            $moyennetotal=$moyennetotal+$d->moyenne_exo;
-            $nbmoy++;
-        }
-        $moyennetotal=$moyennetotal/$nbmoy;
-        $this->eleve_m->insertMoyenne($moyennetotal);
-    }
-
-    public function DonneeExoTest(){
-        $this->db->where('nb_essais >',0);
-        $this->db->where('id_eleve',$this->session->userdata('id_eleve'));
-        $data= $this->db->get("solution_exo");
-        return $data->result();
-    }
-
-    public function insertMoyenne($moyenne){
+    public function insertMoyenne($idEleve){
+        $requete="SELECT AVG(se.moyenne_exo) as moyenne_classe_exo FROM solution_exo se, eleve
+                  WHERE se.id_eleve=".$idEleve." and nb_essais > 0";
+        $moyenne = $this->db->query($requete)->row()->moyenne_classe_exo;
         $this->db->set('moyenne_eleve', $moyenne);
         $this->db->where('id_eleve',$this->session->userdata('id_eleve'));
         $this->db->update("eleve");

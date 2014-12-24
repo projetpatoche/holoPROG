@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title><?= $titre?></title>
-	<link rel="stylesheet" href="<?= base_url(); ?>monCSS/mesStyles1.css" >
+	<title><?php echo $titre?></title>
+	<link rel="stylesheet" href="<?php echo base_url(); ?>monCSS/mesStyles1.css" >
 </head>
 <body>
 
@@ -19,7 +19,7 @@
         <input type="submit" value="Envoyer" />
 
         <?php echo form_close(); ?>
-        <p><?= anchor('users_c','Retour')?></p>
+        <p><?php echo anchor('users_c','Retour')?></p>
 	</div>
 
 	<p class="footer">DUT info Belfort <strong>{elapsed_time}</strong> seconds</p>

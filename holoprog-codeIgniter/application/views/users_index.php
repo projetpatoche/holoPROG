@@ -17,8 +17,8 @@
             <input type="submit" value="Connexion" />
 
             <?php echo form_close(); ?>
-            <p><?= anchor('users_c/inscription','Inscrivez vous!')?></p>
-            <p><?= anchor('users_c/mdp_oublie','Mot de passe oublié ?')?></p>
+            <p><?php echo anchor('users_c/inscription','Inscrivez vous!')?></p>
+            <p><?php echo anchor('users_c/mdp_oublie','Mot de passe oublié ?')?></p>
         <?php endif?>
         <?php if($titre=="deconnexion"):?>
             <?php echo form_open('users_c/deconnexion'); ?>
