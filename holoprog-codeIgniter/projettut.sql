@@ -162,118 +162,118 @@ CREATE TABLE IF NOT EXISTS `eleve` (
 
 /*A1*/
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(1, 'Dervisagic', 'Armin', 1, 10, '1995-10-04', 1, 1);
+VALUES(1, 'Dervisagic', 'Armin',null,null, '1995-10-04', 1, 1);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(2, 'Aypeck', 'Tolga', 2, 15, '1995-08-03', 1, 2);
+VALUES(2, 'Aypeck', 'Tolga',null,null, '1995-08-03', 1, 2);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(3, 'Sabbagh', 'Raphael', 3, 18, '1995-11-10', 1, 3);
+VALUES(3, 'Sabbagh', 'Raphael',null,null, '1995-11-10', 1, 3);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(4, 'Rodriguez', 'Romain', 1, 08, '1996-01-10', 1, 4);
+VALUES(4, 'Rodriguez', 'Romain',null,null, '1996-01-10', 1, 4);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(56, 'Dabere', 'Henry', 2, 12, '1995-12-12', 1, 5);
+VALUES(56, 'Dabere', 'Henry',null,null, '1995-12-12', 1, 5);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(57, 'Zerouali Bardai', 'Omar', 3, 20, '1995-03-04', 1, 6);
+VALUES(57, 'Zerouali Bardai', 'Omar',null,null, '1995-03-04', 1, 6);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(58, 'Voinot', 'Thibaut', 1, 05, '1995-04-08', 1, 7);
+VALUES(58, 'Voinot', 'Thibaut',null,null, '1995-04-08', 1, 7);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(8, 'Lambert', 'Sylvain', 2, 11, '1994-10-20', 1, 8);
+VALUES(8, 'Lambert', 'Sylvain',null,null, '1994-10-20', 1, 8);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(9, 'Michel', 'Victor', 3, 19, '1995-06-12', 1, 9);
+VALUES(9, 'Michel', 'Victor',null,null, '1995-06-12', 1, 9);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(10, 'Amatory', 'Marc', 1, 02, '1995-07-01', 1, 10);
+VALUES(10, 'Amatory', 'Marc',null,null, '1995-07-01', 1, 10);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(11, 'Ferreira', 'Jonathan', 2, 10, '1995-05-23', 1, 11);
+VALUES(11, 'Ferreira', 'Jonathan',null,null, '1995-05-23', 1, 11);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(12, 'Trahin', 'Gael', 3, 16, '1995-11-16', 1, 12);
+VALUES(12, 'Trahin', 'Gael',null,null, '1995-11-16', 1, 12);
 /*A2*/
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(13, 'Bauer', 'Maxime', 1, 10, '1995-10-03', 2, 13);
+VALUES(13, 'Bauer', 'Maxime',null,null, '1995-10-03', 2, 13);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(14, 'Billote', 'Anthony', 2, 11, '1994-06-03', 2, 14);
+VALUES(14, 'Billote', 'Anthony',null,null, '1994-06-03', 2, 14);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(15, 'Burger', 'Mathieu', 3, 15, '1995-11-13', 2, 15);
+VALUES(15, 'Burger', 'Mathieu',null,null, '1995-11-13', 2, 15);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(16, 'Castalan', 'Antoine', 1, 03, '1995-08-21', 2, 16);
+VALUES(16, 'Castalan', 'Antoine',null,null, '1995-08-21', 2, 16);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(17, 'Garet', 'Valentin', 2, 10, '1994-06-08', 2, 17);
+VALUES(17, 'Garet', 'Valentin',null,null, '1994-06-08', 2, 17);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(18, 'Gunther', 'Sebastien', 3, 19, '1996-11-03', 2, 18);
+VALUES(18, 'Gunther', 'Sebastien',null,null, '1996-11-03', 2, 18);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(19, 'Gussy', 'Anthony', 1, 01, '1995-01-20', 2, 19);
+VALUES(19, 'Gussy', 'Anthony',null,null, '1995-01-20', 2, 19);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(20, 'Guyot', 'Yannis', 2, 12, '1994-07-30', 2, 20);
+VALUES(20, 'Guyot', 'Yannis',null,null, '1994-07-30', 2, 20);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(21, 'Mengel', 'Aymeric', 3, 17, '1995-02-16', 2, 21);
+VALUES(21, 'Mengel', 'Aymeric',null,null, '1995-02-16', 2, 21);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(22, 'Servette', 'Corentin', 1, 04, '1995-02-03', 2, 22);
+VALUES(22, 'Servette', 'Corentin',null,null, '1995-02-03', 2, 22);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(23, 'Socie', 'Charles', 2, 13, '1994-05-14', 2, 23);
+VALUES(23, 'Socie', 'Charles',null,null, '1994-05-14', 2, 23);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(24, 'Beaufils', 'Chloé', 3, 18, '1995-07-21', 2, 24);
+VALUES(24, 'Beaufils', 'Chloé',null,null, '1995-07-21', 2, 24);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(25, 'Yangni-Angate', 'Charles-Antoine', 1, 10, '1994-08-30', 2, 25);
+VALUES(25, 'Yangni-Angate', 'Charles-Antoine',null,null, '1994-08-30', 2, 25);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(26, 'Koperez', 'Alexandre', 2, 14, '1993-12-31', 2, 26);
+VALUES(26, 'Koperez', 'Alexandre',null,null, '1993-12-31', 2, 26);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(27, 'Ait Ouaarab', 'Walid', 3, 20, '1995-10-10', 2, 27);
+VALUES(27, 'Ait Ouaarab', 'Walid',null,null, '1995-10-10', 2, 27);
 /*B1*/
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(41, 'Benatti', 'Maxime', 1, 01, '1995-10-23', 3, 28);
+VALUES(41, 'Benatti', 'Maxime',null,null, '1995-10-23', 3, 28);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(42, 'Gauthier', 'Raphael', 2, 10, '1994-02-09', 3, 29);
+VALUES(42, 'Gauthier', 'Raphael',null,null, '1994-02-09', 3, 29);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(43, 'Boughettoucha', 'Khaled', 3, 19, '1995-03-07', 3, 30);
+VALUES(43, 'Boughettoucha', 'Khaled',null,null, '1995-03-07', 3, 30);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(44, 'Corailler', 'Lucas', 1, 03, '1995-07-07', 3, 31);
+VALUES(44, 'Corailler', 'Lucas',null,null, '1995-07-07', 3, 31);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(45, 'Franjaud', 'Stephane', 2, 11, '1993-12-28', 3, 32);
+VALUES(45, 'Franjaud', 'Stephane',null,null, '1993-12-28', 3, 32);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(46, 'Gourdeau', 'Simon', 3, 19, '1995-09-29', 3, 33);
+VALUES(46, 'Gourdeau', 'Simon',null,null, '1995-09-29', 3, 33);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(47, 'Lefort', 'Benjamin', 1, 07, '1995-08-13', 3, 34);
+VALUES(47, 'Lefort', 'Benjamin',null,null, '1995-08-13', 3, 34);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(48, 'Tournoux', 'Corentin', 2, 10, '1995-07-26', 3, 35);
+VALUES(48, 'Tournoux', 'Corentin',null,null, '1995-07-26', 3, 35);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(49, 'Giros', 'Thomas', 3, 16, '1995-10-24', 3, 36);
+VALUES(49, 'Giros', 'Thomas',null,null, '1995-10-24', 3, 36);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(50, 'Maillot', 'Simon', 1, 09, '1993-11-01', 3, 37);
+VALUES(50, 'Maillot', 'Simon',null,null, '1993-11-01', 3, 37);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(51, 'Marin', 'Clement', 2, 12, '1994-01-23', 3, 38);
+VALUES(51, 'Marin', 'Clement',null,null, '1994-01-23', 3, 38);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(52, 'Minet', 'Nicolas', 3, 18, '1995-09-10', 3, 39);
+VALUES(52, 'Minet', 'Nicolas',null,null, '1995-09-10', 3, 39);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(53, 'Perraud', 'Maxime', 1, 02, '1995-11-05', 3, 40);
+VALUES(53, 'Perraud', 'Maxime',null,null, '1995-11-05', 3, 40);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(54, 'Bergeret', 'Florian', 2, 13, '1995-04-02', 3, 41);
+VALUES(54, 'Bergeret', 'Florian',null,null, '1995-04-02', 3, 41);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(55, 'Blanchard', 'Quentin', 3, 20, '1995-04-24', 3, 42);
+VALUES(55, 'Blanchard', 'Quentin',null,null, '1995-04-24', 3, 42);
 /*B2*/
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(28, 'Rousselet', 'Corentin', 1, 04, '1995-08-02', 4, 43);
+VALUES(28, 'Rousselet', 'Corentin',null,null, '1995-08-02', 4, 43);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(29, 'Guyon', 'Loan', 2, 10, '1994-07-04', 4, 44);
+VALUES(29, 'Guyon', 'Loan',null,null, '1994-07-04', 4, 44);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(30, 'Vallet', 'Thomas', 3, 19, '1995-01-03', 4, 45);
+VALUES(30, 'Vallet', 'Thomas',null,null, '1995-01-03', 4, 45);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(31, 'El Houssine', 'Jawad', 1, 03, '1993-09-04', 4, 46);
+VALUES(31, 'El Houssine', 'Jawad',null,null, '1993-09-04', 4, 46);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(32, 'Perez', 'Quentin', 2, 11, '1995-05-12', 4, 47);
+VALUES(32, 'Perez', 'Quentin',null,null, '1995-05-12', 4, 47);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(33, 'Gilbert', 'William', 3, 16, '1995-06-17', 4, 48);
+VALUES(33, 'Gilbert', 'William',null,null, '1995-06-17', 4, 48);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(34, 'Viennet', 'William', 1, 08, '1995-03-07', 4, 49);
+VALUES(34, 'Viennet', 'William',null,null, '1995-03-07', 4, 49);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(35, 'Morel', 'Sylvain', 2, 11, '1993-04-16', 4, 50);
+VALUES(35, 'Morel', 'Sylvain',null,null, '1993-04-16', 4, 50);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(36, 'Sauner', 'Alexandre', 3, 18, '1994-12-23', 4, 51);
+VALUES(36, 'Sauner', 'Alexandre',null,null, '1994-12-23', 4, 51);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(37, 'Caly', 'Berenice', 1, 06, '1994-07-22', 4, 52);
+VALUES(37, 'Caly', 'Berenice',null,null, '1994-07-22', 4, 52);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(38, 'Wolz', 'Aurelien', 2, 15, '1995-03-05', 4, 53);
+VALUES(38, 'Wolz', 'Aurelien',null,null, '1995-03-05', 4, 53);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(39, 'Ravier', 'Clement', 3, 20, '1995-04-19', 4, 54);
+VALUES(39, 'Ravier', 'Clement',null,null, '1995-04-19', 4, 54);
 INSERT INTO `eleve` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `niveau_atteint`, `moyenne_eleve`, `date_de_naissance`, `id_classe`, `identifiant`) 
-VALUES(40, 'Peslier', 'Yohann', 1, 09, '1995-07-23', 4, 55);
+VALUES(40, 'Peslier', 'Yohann',null,null, '1995-07-23', 4, 55);
 
 
 
