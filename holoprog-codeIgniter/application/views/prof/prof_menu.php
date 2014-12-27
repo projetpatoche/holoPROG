@@ -9,14 +9,8 @@
                     <span>Home</span>
                 </a>
             </li>
-            <li>
-                <a href="<?php echo base_url(); ?>index.php/prof_c/">
-								<span class="icon">
-									<i aria-hidden="true" class="icon-services"></i>
-								</span>
-                    <span>Liste des classes</span>
-                </a>
-            </li>
+
+
             <li>
                 <a href="#">
 								<span class="icon">
@@ -26,11 +20,7 @@
                 </a>
             </li>
             <li>
-            <?php foreach($listeClasses as $classe): ?>
 
-                Vos classes
-                <a href="<?php echo base_url();?>/index.php/prof_c/voirClasse/<?php echo $classe->id_classe; ?>"><?php echo $classe->nom_classe; ?></a>
-            <?php endforeach; ?>
             </li>
             <li>
                 <a href="#">
@@ -50,6 +40,33 @@
             </li>
         </ul>
     </nav>
+
+
+
+    <br>
+    <nav id="menu" class="nav">
+        <ul style="height: 25%;">
+            <li>
+                <span class="icon">
+                    <i aria-hidden="true" class="icon-services"></i>
+                </span>
+                <span>Vos classes</span>
+            </li>
+            <?php foreach($listeClasses as $classe): ?>
+                <li>
+                    <a href="<?php echo base_url();?>/index.php/prof_c/voirClasse/<?php echo $classe->id_classe; ?>">
+                        <span class="icon">
+                            <i aria-hidden="true" class="icon"></i>
+                        </span>
+                        <span ><?php echo $classe->nom_classe; ?></span>
+                    </a>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </nav>
+
+
+
 </div>
 <script>
     //  The function to change the class REDUX FRAMEWORK

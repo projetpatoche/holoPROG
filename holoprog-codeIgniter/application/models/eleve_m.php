@@ -25,8 +25,11 @@ class Eleve_m extends CI_Model {
     }
 
     public function getDetailsEleveForProf($idEleve){
+
+
         $requete = "SELECT id_classe FROM eleve WHERE id_eleve=".$idEleve.";";
         $classeEleve=$this->db->query($requete)->row();
+
 
         $requete="SELECT * ,(SELECT AVG(se.moyenne_exo) FROM solution_exo se, eleve WHERE eleve.id_classe=".$classeEleve->id_classe."
         and eleve.id_eleve=se.id_eleve and se.id_exercice=sa.id_exercice and nb_essais > 0)
@@ -34,6 +37,10 @@ class Eleve_m extends CI_Model {
         $query=$this->db->query($requete);
 
         $data=$query->result();
+
+
+
+        $data['moyenne_exo_classe']=10;
 
         $datas['donnee']=$data;
         return $datas;

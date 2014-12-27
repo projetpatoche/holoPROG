@@ -25,9 +25,10 @@ class Classe_m extends CI_Model {
         //Quartiles et médiane
         $requete="SELECT id_eleve,nom_eleve, prenom_eleve, moyenne_eleve
 		FROM eleve
-		WHERE id_classe=".$id." ORDER BY moyenne_eleve;";
+		WHERE id_classe=".$id." AND moyenne_eleve IS NOT NULL ORDER BY moyenne_eleve;";
         $query=$this->db->query($requete);
         $donnee['affichageDetails']=$query->result();
+        if(sizeof($donnee['affichageDetails'])==0) return null;
 
         $i=0;
         $quartile1 = array();

@@ -11,7 +11,7 @@
                 <tr>
                 <td><?php echo $r->nom_eleve; ?></td>
                 <td><?php echo $r->prenom_eleve; ?></td>
-                <td><?php echo $r->moyenne_eleve; ?></td>
+                <td><?php if($r->moyenne_eleve==null) echo "<span style=\"font-style:italic;\">Aucune données enregistrées</span>"; else echo $r->moyenne_eleve; ?></td>
 
 
                 <?php if(!isset($detailsEleve) and eleve_m::aFaitUnExo($r->id_eleve)): ?>
@@ -30,10 +30,8 @@
                         <?php foreach($detailsEleve as $unExo): ?>
                             <?php if($unExo->id_eleve==$r->id_eleve): ?>
                                 Exercice <?php echo $unExo->id_exercice; ?><br>
-                                Moyenne exercice : <?php if($unExo->nb_essais<=0) echo "L'eleve n'a jamais essaye l'exercice";
-                                else echo $unExo->moyenne_exo; ?><br>
-                                Moyenne de classe :<?php if($unExo->moyenne_exo_classe==null) echo "Aucun eleve de la classe n'a fait l'exercice";
-                                else echo $unExo->moyenne_exo_classe; ?><br><br>
+                                Moyenne exercice :<?php echo $unExo->moyenne_exo; ?><br>
+                                Moyenne de classe :<?php echo $moyenne_exo_classe; ?><br><br>
                             <?php endif; ?>
                         <?php endforeach; ?>
                     </td>
@@ -57,17 +55,22 @@
             </tr>
             <tr>
                 <td>Moyenne de classe</td>
-                <td><?php echo $stats['moyenne_classe']; ?></td>
+                <td><?php if($stats['moyenne_classe']==null) echo "<span style=\"font-style:italic;\">Aucune données enregistrées</span>";
+                    else echo number_format($stats['moyenne_classe'],2); ?></td>
             </tr>
             <tr>
                 <td>Meilleur élève</td>
-                <td><?php echo $stats['best']->moyenne_eleve; ?></td>
-                <td><?php echo $stats['best']->nom_eleve; ?></td>
+                <td><?php if($stats['best']==null) echo "<span style=\"font-style:italic;\">Aucune données enregistrées</span>";
+                    else  echo $stats['best']->moyenne_eleve; ?></td>
+                <td><?php if($stats['best']==null) echo "<span style=\"font-style:italic;\">Aucune données enregistrées</span>";
+                    else  echo $stats['best']->nom_eleve; ?></td>
             </tr>
             <tr>
                 <td>Moins bon élève</td>
-                <td><?php echo $stats['worst']->moyenne_eleve; ?></td>
-                <td><?php echo $stats['worst']->nom_eleve; ?></td>
+                <td><?php if($stats['worst']==null) echo "<span style=\"font-style:italic;\">Aucune données enregistrées</span>";
+                    else  echo $stats['worst']->moyenne_eleve; ?></td>
+                <td><?php if($stats['worst']==null) echo "<span style=\"font-style:italic;\">Aucune données enregistrées</span>";
+                    else  echo $stats['worst']->nom_eleve; ?></td>
             </tr>
         </table>
     </div>
@@ -80,11 +83,16 @@
                     <tr>
                         <th>1er quartile</th>
                     </tr>
+                    <?php if($stats['quartile1']==null): ?>
+                    <tr><td><span style="font-style:italic;">Aucune données enregistrées</span></td></tr>
+                    <?php else: ?>
                     <?php foreach($stats['quartile1'] as $line): ?>
-                    <tr>
-                        <td><?php echo $line->prenom_eleve." ".$line->nom_eleve." - ".$line->moyenne_eleve."\\20"; ?></td>
-                    </tr>
+                            <tr>
+                            <td><?php echo $line->prenom_eleve." ".$line->nom_eleve." - ".$line->moyenne_eleve; ?></td>
+                            </tr>
                     <?php endforeach; ?>
+                    <?php endif; ?>
+
                 </table>
             </div>
 
@@ -93,11 +101,15 @@
                     <tr>
                         <th>Médiane</th>
                     </tr>
-                    <?php foreach($stats['mediane'] as $line): ?>
-                    <tr>
-                        <td><?php echo $line->prenom_eleve." ".$line->nom_eleve." - ".$line->moyenne_eleve."\\20"; ?></td>
-                    </tr>
-                    <?php endforeach; ?>
+                    <?php if($stats['mediane']==null): ?>
+                        <tr><td><span style="font-style:italic;">Aucune données enregistrées</span></td></tr>
+                    <?php else: ?>
+                        <?php foreach($stats['mediane'] as $line): ?>
+                            <tr>
+                                <td><?php echo $line->prenom_eleve." ".$line->nom_eleve." - ".$line->moyenne_eleve; ?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
                 </table>
             </div>
 
@@ -106,11 +118,15 @@
                     <tr>
                         <th>3ème quartile</th>
                     </tr>
-                    <?php foreach($stats['quartile3'] as $line): ?>
-                    <tr>
-                        <td><?php echo $line->prenom_eleve." ".$line->nom_eleve." - ".$line->moyenne_eleve."\\20"; ?></td>
-                    </tr>
-                    <?php endforeach; ?>
+                    <?php if($stats['quartile3']==null): ?>
+                        <tr><td><span style="font-style:italic;">Aucune données enregistrées</span></td></tr>
+                    <?php else: ?>
+                        <?php foreach($stats['quartile3'] as $line): ?>
+                            <tr>
+                                <td><?php echo $line->prenom_eleve." ".$line->nom_eleve." - ".$line->moyenne_eleve; ?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
                 </table>
             </div>
         </div>

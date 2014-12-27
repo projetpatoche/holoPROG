@@ -122,6 +122,7 @@ class Client_c extends CI_Controller {
         //Details sur l'élève sélectionné
         $donnee= $this->eleve_m->getDetailsEleveForProf($idEleve);
         $data['detailsEleve']= $donnee['donnee'];
+
         $this->load->view('prof/prof_classe', $data);
         $this->load->view('prof/prof_foot');
     }
