@@ -31,7 +31,7 @@
                             <?php if($unExo->id_eleve==$r->id_eleve): ?>
                                 Exercice <?php echo $unExo->id_exercice; ?><br>
                                 Moyenne exercice :<?php echo $unExo->moyenne_exo; ?><br>
-                                Moyenne de classe :<?php echo $moyenne_exo_classe; ?><br><br>
+                                Moyenne de classe :<?php echo $unExo->moyenne_exo_classe; ?><br><br>
                             <?php endif; ?>
                         <?php endforeach; ?>
                     </td>

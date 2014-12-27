@@ -33,14 +33,11 @@ class Eleve_m extends CI_Model {
 
         $requete="SELECT * ,(SELECT AVG(se.moyenne_exo) FROM solution_exo se, eleve WHERE eleve.id_classe=".$classeEleve->id_classe."
         and eleve.id_eleve=se.id_eleve and se.id_exercice=sa.id_exercice and nb_essais > 0)
-        as moyenne_exo_classe FROM solution_exo sa WHERE id_eleve=".$idEleve." GROUP BY id_exercice;";
+        as moyenne_exo_classe FROM solution_exo sa WHERE id_eleve=".$idEleve." and moyenne_exo != 'null' GROUP BY id_exercice;";
         $query=$this->db->query($requete);
 
         $data=$query->result();
 
-
-
-        $data['moyenne_exo_classe']=10;
 
         $datas['donnee']=$data;
         return $datas;
@@ -56,7 +53,7 @@ class Eleve_m extends CI_Model {
     }
 
     public function aFaitUnExo($id){
-        $requete = "SELECT * FROM solution_exo WHERE id_eleve=".$id.";";
+        $requete = "SELECT * FROM solution_exo WHERE id_eleve=".$id." and nb_essais > 0 ;";
         $res = $this->db->query($requete)->row();
         if(isset($res->id_eleve)) return true;
         else return false;

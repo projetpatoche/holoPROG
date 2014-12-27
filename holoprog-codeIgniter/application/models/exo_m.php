@@ -31,7 +31,7 @@ class Exo_m extends CI_Model {
 			}
 
 			$requete="insert into solution_exo 
-			values(\"".$id_exercice."\",\"".$this->session->userdata('id_eleve')."\",\"".$erreur."\", 0,0,0)";
+			values(\"".$id_exercice."\",\"".$this->session->userdata('id_eleve')."\",\"".$erreur."\", 0,null,0)";
 			$query=$this->db->query($requete); //cree le champs
 		}
 	}
