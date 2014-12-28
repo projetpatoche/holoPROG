@@ -54,17 +54,19 @@ class Prof_m extends CI_Model {
         $query=$this->db->query($requete);
         $moyenne=$query->row()->moy;
 
-        $requete="SELECT moyenne_eleve FROM eleve WHERE id_classe=".$idClasse.";";
+        $requete="SELECT moyenne_eleve FROM eleve WHERE id_classe=".$idClasse." AND moyenne_eleve IS NOT NULL;";
         $query=$this->db->query($requete);
         $data=$query->result();
 
-        $ecarttype=0;
-        $effectif=0;
-        foreach($data as $line){
-            $effectif+=1;
-            $ecarttype+=($line->moyenne_eleve-$moyenne)*($line->moyenne_eleve-$moyenne);
+        if(sizeof($data)==0){
+            return null;
         }
 
-        return sqrt($ecarttype/$effectif);
+        $ecarttype=0;
+        foreach($data as $line){
+            $ecarttype+=(($line->moyenne_eleve)-$moyenne)*(($line->moyenne_eleve)-$moyenne);
+        }
+
+        return sqrt($ecarttype/sizeof($data));
     }
 }
