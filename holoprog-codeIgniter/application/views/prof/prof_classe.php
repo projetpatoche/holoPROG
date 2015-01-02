@@ -132,7 +132,7 @@
         </div>
 
     <div>
-        <?php if($ecartype!=null): ?>
+        <?php if($ecarttype!=null): ?>
             <p style="margin-left:20%;">Ecart-type :<?php echo $ecarttype; ?></p>
         <?php endif; ?>
     </div>
