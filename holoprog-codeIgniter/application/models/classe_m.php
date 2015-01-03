@@ -11,9 +11,9 @@ class Classe_m extends CI_Model {
         $donnee['moyenne_classe']=$query->row()->moyenne;
 
         //Recuperation de la moyenne des meilleurs et pire élèves
-        $requete="SELECT nom_eleve,moyenne_eleve FROM ELEVE  WHERE moyenne_eleve IN (SELECT MAX(moyenne_eleve)
+        $requete="SELECT nom_eleve,moyenne_eleve FROM eleve  WHERE moyenne_eleve IN (SELECT MAX(moyenne_eleve)
                   from eleve WHERE id_classe=".$id.") AND id_classe=".$id." ;";
-        $requete2="SELECT nom_eleve,moyenne_eleve FROM ELEVE  WHERE moyenne_eleve IN (SELECT MIN(moyenne_eleve)
+        $requete2="SELECT nom_eleve,moyenne_eleve FROM eleve  WHERE moyenne_eleve IN (SELECT MIN(moyenne_eleve)
                   from eleve WHERE id_classe=".$id.") AND id_classe=".$id." ;";
         $query=$this->db->query($requete);
         $donnee['best']=$query->row();

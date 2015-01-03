@@ -31,9 +31,11 @@ class Client_c extends CI_Controller {
         endif;
 
 
-        $donnee['titre']='statistique';
-
+        $donnee['titre']='Banque d\'exercice';
+        $this->load->view('clients/client_head');
+        $this->load->view('clients/client_menu');
         $this->load->view('clients/client_index',$donnee);
+        $this->load->view('clients/client_foot');
     }
     public function Exo($id)
     {
@@ -97,6 +99,10 @@ class Client_c extends CI_Controller {
                 $this->exo_m->inscritErreurExo($erreurfinal, $id);
                 $this->eleve_m->insertMoyenne($this->session->userdata('id_eleve'));
             }
+            $this->load->view('clients/client_head');
+            $this->load->view('clients/client_erreur_exo');
+            $this->load->view('clients/client_foot');
+
         }
     }
 

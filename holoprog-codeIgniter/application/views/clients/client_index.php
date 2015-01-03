@@ -1,32 +1,127 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title><?php echo $titre?></title>
 
-	<link rel="stylesheet" href="<?php echo base_url(); ?>monCSS/mesStyles1.css" >
-</head>
-<body>
+<div class="row">
+    <div class="text-center">
+        <h1 class="alamain">Bonjour <?php echo $this->session->userdata('nom_eleve');?></h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12"><br><br></div>
+</div>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 text-center">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            </ol>
 
-<div id="container">
-    <div>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="http://placehold.it/1200x315" alt="...">
+                    <div class="carousel-caption">
+                        <h3 class="alamain">Bienvenue sur la banque d'exercices<br>
+                        Voici les derniers exercices ajoutés</h3>
+                    </div>
+                </div>
+                <div class="item" data-toggle="modal"
+                     data-target="#exercice1">
+                    <img src="<?php echo base_url();?>img/ecluse_carousel.jpg" alt="...">
+                    <div class="carousel-caption">
+                        <h3 class="alamain">Exercice 1: problème de l'écluse</h3>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="http://placehold.it/1200x315" alt="...">
+                    <div class="carousel-caption">
+                        <h3 class="alamain">Exercice 2: exercice de test</h3>
+                    </div>
+                </div>
+            </div>
 
-        <h1>Bonjour   
-		
-<?php
-		ECHO $this->session->userdata('nom_eleve');
-		?></h1>
-
-		<a href="<?php echo base_url(); ?>index.php/client_c/Exo/1">Exo 1</a>
-        <a href="<?php echo base_url(); ?>index.php/client_c/Exo/2">Exo 2</a>
-        <p>
-		<form method="post" action="<?php echo base_url(); ?>index.php/users_c/deconnexion" >
-		<input type="submit"  name="act_soumettre" value="Deconnexion"/>
-		</form>
-		</p>
-	</div>
-	<p class="footer">DUT info Belfort <strong>{elapsed_time}</strong> seconds</p>
+            <!-- Controls -->
+            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        </div> <!-- Carousel -->
+    </div>
 </div>
 
-</body>
-</html>
+<div class="row"> <!-- Boutons exercices -->
+    <div class="col-md-1"></div>
+    <div class="col-md-8">
+
+        <button class="btn btn-primary btn-lg" data-toggle="modal"
+                data-target="#exercice1">
+            Exercice 1
+        </button><br><br>
+        <button class="btn btn-primary btn-lg" data-toggle="modal"
+                data-target="#exercice2">
+            Exercice 2
+        </button><br><br>
+
+    </div>
+</div> <!-- Boutons exercices -->
+
+
+<!-- Modal exercice 1 -->
+<div class="modal fade" id="exercice1" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close"
+                        data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    Exercice 1
+                </h4>
+            </div>
+            <div class="modal-body">
+                Exercice classique de l'écluse de niveau facile.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default"
+                        data-dismiss="modal">Fermer
+                </button>
+                <a class="btn btn-primary" href="<?php echo base_url(); ?>index.php/client_c/Exo/1">Commencer l'exercice 1</a><br>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+<!-- Modal exercice 2 -->
+<div class="modal fade" id="exercice2" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close"
+                        data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    Exercice 2
+                </h4>
+            </div>
+            <div class="modal-body">
+                Exercice test numéro 2.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default"
+                        data-dismiss="modal">Fermer
+                </button>
+                <a class="btn btn-primary" href="<?php echo base_url(); ?>index.php/client_c/Exo/2">Commencer l'exercice 2</a><br>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>

@@ -17,3 +17,20 @@
     padding:15px;
     background-size: cover;
 }
+
+.fond_client{
+    background-image: url('../../img/fond_site_client.jpg');
+    margin:0;
+    padding:0;
+    -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+    background-size: cover; /* version standardisée */
+}
+
+@font-face {
+    font-family: 'alamain';
+    src: url('../../font/alamain1.ttf');
+}
+
+.alamain{
+    font-family: 'alamain';
+}
