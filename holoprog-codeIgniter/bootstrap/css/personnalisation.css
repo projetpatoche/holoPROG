@@ -19,11 +19,8 @@
 }
 
 .fond_client{
-    background-image: url('../../img/fond_site_client.jpg');
-    margin:0;
-    padding:0;
-    -webkit-background-size: cover; /* pour anciens Chrome et Safari */
-    background-size: cover; /* version standardisée */
+    background-image: url('../../img/fond_site.png');
+
 }
 
 @font-face {
