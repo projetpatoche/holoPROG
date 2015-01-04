@@ -100,7 +100,9 @@ class Client_c extends CI_Controller {
                 $this->eleve_m->insertMoyenne($this->session->userdata('id_eleve'));
             }
             $this->load->view('clients/client_head');
-            $this->load->view('clients/client_erreur_exo');
+            $this->load->view('clients/client_menu');
+            $data['nberreur'] = $data['taille_exo'] - $nbreussi;
+            $this->load->view('clients/client_erreur_exo',$data);
             $this->load->view('clients/client_foot');
 
         }

@@ -21,6 +21,6 @@
     <script src="<?php echo base_url(); ?>js/jquery.sortable.js"></script>
     <script src="<?php echo base_url(); ?>bootstrap/js/bootstrap.min.js"></script>
 </head>
-<body class="fond_client">
+<body class="fond">
 
 		

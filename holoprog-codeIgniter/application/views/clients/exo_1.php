@@ -3,81 +3,56 @@
     <br>
 </div>
 <div class = "row">
-    <div class="col-md-1"></div>
+    <div class="col-md-3"></div>
     <div class="col-md-3">
-        <iframe width="320" height="315" src="//www.youtube.com/embed/gHL9HCKloAs" frameborder="0" allowfullscreen></iframe>
+        <img src="<?php echo base_url();?>img/exercice/barriere/barriere_consignes.jpg">
     </div>
-    <div class="col-md-8">
+    <div class="col-md-6">
         <form method="post" action="<?php echo base_url();?>index.php/client_c/correctionExo/1" >
-            <section id="connected">
-                <div class="col-md-4 list-reponse">
-                    <ul class="connected list">
-                        <li><img src="<?php echo base_url();?>img/bloc_debut.png"></li>
-
-                        <div class="row"></div>
-                        <li>
-                            <SELECT class="form-control" name="4" size="1">
-                                <OPTION value="1">1</OPTION>
-                                <OPTION value="2">2</OPTION>
-                                <OPTION value="3">3</OPTION>
-                                <!--  <OPTION value="4">4</OPTION>
-                                   <OPTION value="5">5</OPTION>-->
-                            </SELECT>
-                        </li>
-                    </ul>
+            <div class="">
+                <div class="barriere_bloc_1">
+                    <SELECT class="select_barriere_bloc_1" name="0">
+                        <OPTION value="1">Début</OPTION>
+                        <OPTION value="2">Fin</OPTION>
+                        <OPTION value="3">Démarrage</OPTION>
+                    </SELECT>
                 </div>
-                <div class="col-md-4 list-question">
-                    <ul class="connected list no2">
-                        <li><div class="bloc_condition"><SELECT class="" name="0" >
-                                    <OPTION value="1">Ouvrir la vanne amont</OPTION>
-                                    <OPTION value="2">Ouvrir la porte amont</OPTION>
-                                    <OPTION value="3">3</OPTION>
-                                    <!--<OPTION value="1">1</OPTION>
-                                    <OPTION value="2">2</OPTION>
-                                    <OPTION value="3">3</OPTION>
-                                    <OPTION value="4">4</OPTION>
-                                    <OPTION value="5">5</OPTION>-->
-                                </SELECT></div></li>
 
-                        <li><SELECT class="form-control" name="1" size="1">
-                                <OPTION value="1">1</OPTION>
-                                <OPTION value="2">2</OPTION>
-                                <OPTION value="3">3</OPTION>
-                                <!-- <OPTION value="4">4</OPTION>
-                                 <OPTION value="5">5</OPTION>-->
-                            </SELECT></li>
+                <div class="barriere_bloc_2">
+                    <SELECT class="select_barriere_bloc_2" name="1" >
+                        <OPTION value="1">Code valide ?</OPTION>
+                        <OPTION value="2">Code invalide ?</OPTION>
+                        <OPTION value="3">Ouverture</OPTION>
+                    </SELECT></div></li>
 
-                        <div class="row"></div>
+                <div class="barriere_bloc_3">
+                    <SELECT class="select_barriere_bloc_3" name="2" >
+                        <OPTION value="1">Ouvrir barrière + allumer voyant</OPTION>
+                        <OPTION value="2">Fermer barrière</OPTION>
+                        <OPTION value="3">Allumer le voyant</OPTION>
+                    </SELECT></div>
+                <div class="barriere_bloc_4">
+                    <SELECT class="select_barriere_bloc_4" name="3" >
+                        <OPTION value="1">Allumer voyant</OPTION>
+                        <OPTION value="2">Voiture passée ?</OPTION>
+                        <OPTION value="3">Fermer barrière</OPTION>
+                    </SELECT></div>
+                <div class="barriere_bloc_5">
+                    <SELECT class="select_barriere_bloc_5" name="4" >
+                        <OPTION value="1">Voiture passée</OPTION>
+                        <OPTION value="2">Eteindre voyant</OPTION>
+                        <OPTION value="3">Fermer barrière + éteindre voyant</OPTION>
+                    </SELECT></div>
 
-                        <li><SELECT class="form-control" name="2" size="1">
-                                <OPTION value="1">1</OPTION>
-                                <OPTION value="2">2</OPTION>
-                                <OPTION value="3">3</OPTION>
-                                <!-- <OPTION value="4">4</OPTION>
-                                <OPTION value="5">5</OPTION>-->
-                            </SELECT></li>
+            </div>
 
-                        <div class="row"></div>
-
-                        <li><SELECT class="form-control" name="3" size="1">
-                                <OPTION value="1">1</OPTION>
-                                <OPTION value="2">2</OPTION>
-                                <OPTION value="3">3</OPTION>
-                                <!-- <OPTION value="4">4</OPTION>
-                               <OPTION value="5">5</OPTION>-->
-                            </SELECT></li>
-
-                </div>
-            </section>
             <div class="row"></div>
-            <div class="col-lg-2">
-                <input type="submit"  name="act_soumettre" value="Valide"/>
+            <div class="col-md-6">
+                <br><br>
+                <button type="submit" class="btn-success btn btn-large btn-block btn-primary" name="act_soumettre" value="Valide"/> Valider</button>
+                <br><br>
             </div>
         </form>
-        <form method="post" action="<?php echo base_url();?>index.php/users_c/deconnexion" >
-            <input type="submit"  name="act_soumettre" value="Deconnexion"/>
-        </form>
-
     </div>
 </div>
 <script>

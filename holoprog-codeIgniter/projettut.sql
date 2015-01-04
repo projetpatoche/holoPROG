@@ -286,7 +286,7 @@ PRIMARY KEY (id_exercice)
 
 INSERT INTO `exercice`
 (`id_exercice`,`correction_exercice`, `taille_exo`) 
-VALUES (null,'1-2-1-3-2',5);
+VALUES (null,'1-1-1-2-3',5);
 INSERT INTO `exercice`
 (`id_exercice`, `correction_exercice`, `taille_exo`) 
 VALUES (null,'1-3-3-3-3-3',6);

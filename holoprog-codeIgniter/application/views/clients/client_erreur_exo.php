@@ -1,17 +1,17 @@
-<div class="modal">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Modal title</h4>
-            </div>
-            <div class="modal-body">
-                <p>One fine body&hellip;</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-3">
+        <img src="<?php echo base_url(); ?>img/erreur_exo.png">
+    </div>
+    <div class="col-md-6">
+        <div class="row">
+            <h2 class="alamain">Attention il semble que tu as fait <?php echo $nberreur?></h2><br>
+            <h2 class="alamain"><?php if($nberreur > 1) echo("erreurs.");
+                else echo("erreur.");?></h2><br><br>
+            <h2 class="alamain">Relis bien l'exercice.</h2><br>
+        </div>
+        <div class="row"><br>
+            <a class="btn btn-lg btn-info" href="javascript:history.go(-1)">Retour à l'exercice</a>
+        </div>
+    </div>
+</div>

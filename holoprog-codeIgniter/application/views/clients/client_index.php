@@ -16,12 +16,13 @@
                 <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
                 <li data-target="#carousel-example-generic" data-slide-to="1"></li>
                 <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="3"></li>
             </ol>
 
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
                 <div class="item active">
-                    <img src="http://placehold.it/1200x315" alt="...">
+                    <img src="<?php echo base_url();?>img/banque_exercice_carousel.jpg" alt="...">
                     <div class="carousel-caption">
                         <h3 class="alamain">Bienvenue sur la banque d'exercices<br>
                         Voici les derniers exercices ajoutés</h3>
@@ -29,15 +30,22 @@
                 </div>
                 <div class="item" data-toggle="modal"
                      data-target="#exercice1">
-                    <img src="<?php echo base_url();?>img/ecluse_carousel.jpg" alt="...">
+                    <img src="<?php echo base_url();?>img/barriere_carousel.jpg" alt="...">
                     <div class="carousel-caption">
-                        <h3 class="alamain">Exercice 1: problème de l'écluse</h3>
+                        <h3 class="alamain">Exercice 1: barrière automatisée</h3>
                     </div>
                 </div>
                 <div class="item">
-                    <img src="http://placehold.it/1200x315" alt="...">
+                    <img src="<?php echo base_url();?>img/barriere_carousel.jpg" alt="...">
                     <div class="carousel-caption">
-                        <h3 class="alamain">Exercice 2: exercice de test</h3>
+                        <h3 class="alamain">Exercice 2: barrière automatisée niveau 2</h3>
+                    </div>
+                </div>
+                <div class="item" data-toggle="modal"
+                     data-target="#exercice1">
+                    <img src="<?php echo base_url();?>img/ecluse_carousel.jpg" alt="...">
+                    <div class="carousel-caption">
+                        <h3 class="alamain">Exercice 3: Problème d'écluse</h3>
                     </div>
                 </div>
             </div>
@@ -85,7 +93,7 @@
                 </h4>
             </div>
             <div class="modal-body">
-                Exercice classique de l'écluse de niveau facile.
+                Exercice sur le fonctionnement d'une barrière automatisée: niveau facile.
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default"
@@ -113,7 +121,35 @@
                 </h4>
             </div>
             <div class="modal-body">
-                Exercice test numéro 2.
+                Exercice sur le fonctionnement d'une barrière automatisée: niveau moyen.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default"
+                        data-dismiss="modal">Fermer
+                </button>
+                <a class="btn btn-primary" href="<?php echo base_url(); ?>index.php/client_c/Exo/2">Commencer l'exercice 2</a><br>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+<!-- Modal exercice 3 -->
+<div class="modal fade" id="exercice3" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close"
+                        data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    Exercice 3
+                </h4>
+            </div>
+            <div class="modal-body">
+                Exercice classique de l'écluse niveau facile.
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default"

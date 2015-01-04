@@ -18,7 +18,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
     background: transparent;
 }
 body {
-    background: #DCDDDF url(<?php echo base_url(); ?>img/fond_connexion.png);
+    background: #DCDDDF url(<?php echo base_url(); ?>img/fond_site.png);
     color: #000;
     font: 14px Arial;
     margin: 0 auto;
