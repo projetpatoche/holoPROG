@@ -43,6 +43,7 @@ class Prof_c extends CI_Controller {
         $data['ecarttype'] = $this->prof_m->ecartType($idClasse);
         $data['stats'] = $this->classe_m->getStatProf($idClasse);
 
+
         $this->load->view('prof/prof_classe', $data);
 
         $this->load->view('prof/prof_foot');

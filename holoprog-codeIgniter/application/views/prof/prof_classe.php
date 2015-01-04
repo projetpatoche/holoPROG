@@ -1,6 +1,15 @@
-<div class="row" >
+
+<style>
+    caption{
+        font-size:30px;
+    }
+
+
+</style>
+<div class="row" style="font-size:15px;" >
+    <div>
     <table style ="width:50%;margin-left:20%;" class="table table-bordered" >
-        <caption>Liste de vos eleves</caption>
+        <caption>Liste des élèves</caption>
         <tr>
             <th>Nom</th>
             <th>Prénom</th>
@@ -26,7 +35,7 @@
                     </tr>
                     <tr >
 
-                    <td colspan="4">
+                    <td style="text-align:left;" colspan="4">
                         <?php foreach($detailsEleve as $unExo): ?>
                             <?php if($unExo->id_eleve==$r->id_eleve): ?>
                                 Exercice <?php echo $unExo->id_exercice; ?><br>
@@ -41,16 +50,18 @@
             <?php endforeach; ?>
         <?php endif; ?>
     </table>
+    </div>
+    <br><br>
 
 
     <!-- TABLEAU MOYENNE -->
-
+    <div>
     <table style ="width:50%;margin-left:20%;" class="table table-bordered" >
         <caption>Statistiques</caption>
         <tr>
             <th></th>
             <th>Note</th>
-            <th rowspan="2">Éleve</th>
+            <th style="vertical-align: middle;" rowspan="2">Éleve</th>
 
             </tr>
             <tr>

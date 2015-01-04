@@ -30,6 +30,17 @@
                     <span>A propos</span>
                 </a>
             </li>
+
+            <?php foreach($listeClasses as $classe): ?>
+                <li>
+                    <a href="<?php echo base_url();?>/index.php/prof_c/voirClasse/<?php echo $classe->id_classe; ?>">
+                        <span class="icon">
+                            <i aria-hidden="true" class="icon"></i>
+                        </span>
+                        <span ><?php echo $classe->nom_classe; ?></span>
+                    </a>
+                </li>
+            <?php endforeach; ?>
             <li>
                 <a href="<?php echo base_url(); ?>index.php/users_c/deconnexion">
 								<span class="icon">
@@ -44,26 +55,6 @@
 
 
     <br>
-    <nav id="menu" class="nav">
-        <ul style="height: 25%;">
-            <li>
-                <span class="icon">
-                    <i aria-hidden="true" class="icon-services"></i>
-                </span>
-                <span>Vos classes</span>
-            </li>
-            <?php foreach($listeClasses as $classe): ?>
-                <li>
-                    <a href="<?php echo base_url();?>/index.php/prof_c/voirClasse/<?php echo $classe->id_classe; ?>">
-                        <span class="icon">
-                            <i aria-hidden="true" class="icon"></i>
-                        </span>
-                        <span ><?php echo $classe->nom_classe; ?></span>
-                    </a>
-                </li>
-            <?php endforeach; ?>
-        </ul>
-    </nav>
 
 
 

@@ -261,7 +261,7 @@ th {
   }
   .table-bordered th,
   .table-bordered td {
-    border: 1px solid #ddd !important;
+    border: 1px solid #00262f !important;
   }
 }
 @font-face {
@@ -2110,6 +2110,8 @@ th {
 }
 .table-bordered {
   border: 1px solid #ddd;
+  border-collapse: separate;
+  border-spacing: 5px;
 }
 .table-bordered > thead > tr > th,
 .table-bordered > tbody > tr > th,
@@ -2117,8 +2119,12 @@ th {
 .table-bordered > thead > tr > td,
 .table-bordered > tbody > tr > td,
 .table-bordered > tfoot > tr > td {
-  border: 1px solid #ddd;
+  border: 1px solid #002166;
+  border-radius: 5px;
+  text-align:center;
 }
+
+
 .table-bordered > thead > tr > th,
 .table-bordered > thead > tr > td {
   border-bottom-width: 2px;
