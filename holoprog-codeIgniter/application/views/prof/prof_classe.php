@@ -40,7 +40,7 @@
                             <?php if($unExo->id_eleve==$r->id_eleve): ?>
                                 Exercice <?php echo $unExo->id_exercice; ?><br>
                                 Moyenne exercice :<?php echo $unExo->moyenne_exo; ?><br>
-                                Moyenne de classe :<?php echo $unExo->moyenne_exo_classe; ?><br><br>
+                                Moyenne de classe :<?php echo number_format($unExo->moyenne_exo_classe,2); ?><br><br>
                             <?php endif; ?>
                         <?php endforeach; ?>
                     </td>
@@ -144,7 +144,7 @@
 
     <div>
         <?php if($ecarttype!=null): ?>
-            <p style="margin-left:20%;">Ecart-type :<?php echo $ecarttype; ?></p>
+            <p style="margin-left:20%;font-size: 30px;color:#525967">Ecart-type de <?php echo $ecarttype; ?></p>
         <?php endif; ?>
     </div>
 

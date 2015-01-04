@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>bootstrap/css/bootstrap.css">
     <script src="<?php echo base_url(); ?>js/modernizr.custom.js"></script></head>
 
-<body class="fond">
+<body class="fond" style="background: #DCDDDF url(<?php echo base_url(); ?>img/fond_site.png);">
 <div id="container">
 
 		
