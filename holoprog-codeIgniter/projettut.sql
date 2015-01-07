@@ -289,7 +289,7 @@ INSERT INTO `exercice`
 VALUES (null,'1-1-1-2-3',5);
 INSERT INTO `exercice`
 (`id_exercice`, `correction_exercice`, `taille_exo`) 
-VALUES (null,'1-3-3-3-3-3',6);
+VALUES (null,'1-1-1-2-3',5);
 
 CREATE TABLE solution_exo (
 id_exercice INT,

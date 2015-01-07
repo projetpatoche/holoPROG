@@ -144,7 +144,7 @@
 
     <div>
         <?php if($ecarttype!=null): ?>
-            <p style="margin-left:20%;font-size: 30px;color:#525967">Ecart-type de <?php echo $ecarttype; ?></p>
+            <p style="margin-left:20%;font-size: 30px;color:#525967">Ecart-type de <?php echo number_format($ecarttype,2)?></p>
         <?php endif; ?>
     </div>
 

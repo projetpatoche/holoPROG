@@ -73,6 +73,10 @@
                 data-target="#exercice2">
             Exercice 2
         </button><br><br>
+        <button class="btn btn-primary btn-lg" data-toggle="modal"
+                data-target="#exercice3">
+            Exercice 3
+        </button><br><br>
 
     </div>
 </div> <!-- Boutons exercices -->
@@ -94,6 +98,7 @@
             </div>
             <div class="modal-body">
                 Exercice sur le fonctionnement d'une barrière automatisée: niveau facile.
+                <img src="<?php echo base_url();?>img/etoile1.jpg" alt="...">
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default"
@@ -121,7 +126,9 @@
                 </h4>
             </div>
             <div class="modal-body">
-                Exercice sur le fonctionnement d'une barrière automatisée: niveau moyen.
+                Exercice sur le fonctionnement d'une barrière automatisée: niveau moyen.<br>
+                L'ordre des logigrammes est à déterminer.
+                <img src="<?php echo base_url();?>img/etoile2.jpg" alt="...">
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default"
@@ -149,13 +156,14 @@
                 </h4>
             </div>
             <div class="modal-body">
-                Exercice classique de l'écluse niveau facile.
+                Exercice classique de l'écluse niveau moyen.
+                <img src="<?php echo base_url();?>img/etoile2.jpg" alt="...">
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default"
                         data-dismiss="modal">Fermer
                 </button>
-                <a class="btn btn-primary" href="<?php echo base_url(); ?>index.php/client_c/Exo/2">Commencer l'exercice 2</a><br>
+                <a class="btn btn-primary" href="<?php echo base_url(); ?>index.php/client_c/Exo/3">Commencer l'exercice 3</a><br>
 
             </div>
         </div><!-- /.modal-content -->
