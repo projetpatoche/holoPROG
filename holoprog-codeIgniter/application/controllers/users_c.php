@@ -72,5 +72,46 @@ class Users_c extends CI_Controller {
         $this->session->sess_destroy();
         redirect('users_c');exit;
     }
+
+    public function inscriptionUsers(){
+
+        $this->load->view('users_head');
+        $this->load->view('users_menu');
+        $this->load->view('users_inscription');
+        $this->load->view('users_foot');
+
+    }
+
+    public function inscription()
+    {
+        $donnees['login']=$_POST['login_utilisateur'];
+        $donnees['pass']=$_POST['password_utilisateur'];
+        $this->form_validation->set_rules('login_utilisateur','login','trim|required');
+        $this->form_validation->set_rules('password_utilisateur','Mot de passe','trim|required|matches[password_utilisateur2]');
+        $this->form_validation->set_rules('password_utilisateur2','Vérifier mot de passe','trim|required');
+
+        $data['nom_eleve']=$_POST['nom_utilisateur'];
+        $data['prenom_eleve']=$_POST['prenom_utilisateur'];
+
+
+        /* rappeler la vue à la fin de la méthode */
+       if($this->form_validation->run()){
+                if(! $this->users_m->test_login($this->input->post('login'))){
+                    $donnees['droit']=1;
+
+                    $this->users_m->add_user($donnees, $data);
+                    // fin d'ajout et redirection
+                    redirect(base_url());
+                }
+                else{
+                    $donnees['erreur']="ce login existe déjà";
+                }
+
+            }
+
+
+        $donnees['titre']="inscription";
+        $this->load->view('users_inscription',$donnees);
+    }
    
 }
