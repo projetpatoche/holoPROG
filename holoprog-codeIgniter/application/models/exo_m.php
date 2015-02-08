@@ -93,6 +93,27 @@ class Exo_m extends CI_Model {
         $this->db->update("solution_exo");
     }
 
+    public function detailsExosByEleve($idEleve, $idExo){
+        $requete="SELECT *
+		FROM solution_exo
+		where id_eleve=".$idEleve."
+		and id_exercice=".$idExo.";";
+        $exo=$this->db->query($requete)->result()[0];
+
+        //Traitements des erreurs par champs
+        $erreursByFields = explode('/', $exo->erreur_exo);
+
+        echo $exo->nb_essais." tentatives : <br/>";
+        $i=1;
+        echo "<div style='margin-left:5%'>";
+        foreach($erreursByFields as $select){
+            echo "Choix ".$i." : C'est trompé ".array_sum(explode('-',$select))." fois.<br/>";
+            $i++;
+        }
+        echo "</div>";
+
+    }
+
 
     
 }
