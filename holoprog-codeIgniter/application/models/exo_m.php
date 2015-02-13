@@ -102,8 +102,14 @@ class Exo_m extends CI_Model {
 
         //Traitements des erreurs par champs
         $erreursByFields = explode('/', $exo->erreur_exo);
+        $achievement = "";
+        if($exo->exo_fait==1){
+            $achievement = "Terminé avec ";
+        }else{
+            $achievement = "Non terminé avec ";
+        }
 
-        echo $exo->nb_essais." tentatives : <br/>";
+        echo $achievement.$exo->nb_essais." tentative(s) : <br/>";
         $i=1;
         echo "<div style='margin-left:5%'>";
         foreach($erreursByFields as $select){
