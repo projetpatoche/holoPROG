@@ -38,9 +38,12 @@
                     <td style="text-align:left;" colspan="4">
                         <?php foreach($detailsEleve as $unExo): ?>
                             <?php if($unExo->id_eleve==$r->id_eleve): ?>
-                                Exercice <?php echo $unExo->id_exercice; ?><br>
-                                Moyenne exercice :<?php echo $unExo->moyenne_exo; ?><br>
-                                Moyenne de classe :<?php echo number_format($unExo->moyenne_exo_classe,2); ?><br><br>
+                                <b>Exercice <?php echo $unExo->id_exercice; ?></b><br>
+                                Moyenne exercice : <?php echo $unExo->moyenne_exo; ?><br>
+                                Moyenne de classe : <?php echo number_format($unExo->moyenne_exo_classe,2); ?><br>
+                                <?php exo_m::detailsExosByEleve($unExo->id_eleve, $unExo->id_exercice) ?>
+
+
                             <?php endif; ?>
                         <?php endforeach; ?>
                     </td>
