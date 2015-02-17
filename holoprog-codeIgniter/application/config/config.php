@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://127.0.0.1:90/projects/holoPROG/holoprog-codeIgniter/';
+$config['base_url']	= 'http://127.0.0.1/S4/holoPROG/holoprog-codeIgniter/';
 
 /*
 |--------------------------------------------------------------------------

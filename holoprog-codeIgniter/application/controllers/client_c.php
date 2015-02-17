@@ -83,12 +83,18 @@ class Client_c extends CI_Controller {
         $moyenne_exo = 20 - 20 * $nberreurtotal / ($erreur['nb_essais'] * $data['taille_exo']);
 
         if ($nbreussi == $data['taille_exo']) { //si la personne a tout juste
+            $this->load->view('clients/client_head');
+            $this->load->view('clients/client_menu');
+            $this->load->view('clients/client_exo_reussi');
+
+            $this->load->view('clients/client_foot');
             if ($erreur['exo_fait'] != 1) {          //empeche le recalcule de la moyenne si l'eleve a deja fini l'exo
                 $this->exo_m->validationExo($id);
                 $this->exo_m->InsertMoyenneExo($id, $moyenne_exo);
                 $this->eleve_m->insertMoyenne($this->session->userdata('id_eleve'));
+
             }
-            redirect('client_c/index');
+           // redirect('client_c/index');
         } else {
             $erreurfinal = $nberreur[0]; //sinon reinsere les erreurs dans un string puis dans la table
             for ($i = 1; $i < $data['taille_exo']; $i++) {
