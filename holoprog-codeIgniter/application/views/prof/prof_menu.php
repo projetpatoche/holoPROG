@@ -2,7 +2,7 @@
     <nav id="menu" class="nav">
         <ul>
             <li>
-                <a href="#">
+                <a href="<?php echo base_url();?>index.php/prof_c/index">
 								<span class="icon">
 									<i aria-hidden="true" class="icon-home"></i>
 								</span>
@@ -33,7 +33,7 @@
 
             <?php foreach($listeClasses as $classe): ?>
                 <li>
-                    <a href="<?php echo base_url();?>/index.php/prof_c/voirClasse/<?php echo $classe->id_classe; ?>">
+                    <a href="<?php echo base_url();?>index.php/prof_c/voirClasse/<?php echo $classe->id_classe; ?>">
                         <span class="icon">
                             <i aria-hidden="true" class="icon"></i>
                         </span>

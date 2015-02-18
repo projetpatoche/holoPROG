@@ -8,7 +8,7 @@
             <h2 class="alamain">Félicitation tu as tout juste, tu peux passer a l'exercice suivant : </h2><br>
         </div>
         <div class="row"><br>
-            <a class="btn btn-lg btn-info" href="http://127.0.0.1/S4/holoPROG/holoprog-codeIgniter/index.php/client_c/Exo/2">Exercice suivant</a>
+            <a class="btn btn-lg btn-info" href="<?php echo base_url(); ?>index.php/client_c/Exo/2">Exercice suivant</a>
         </div>
     </div>
 </div>

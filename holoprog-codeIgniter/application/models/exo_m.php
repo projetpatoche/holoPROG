@@ -98,7 +98,7 @@ class Exo_m extends CI_Model {
 		FROM solution_exo
 		where id_eleve=".$idEleve."
 		and id_exercice=".$idExo.";";
-        $exo=$this->db->query($requete)->result()[0];
+        $exo=$this->db->query($requete)->row();
 
         //Traitements des erreurs par champs
         $erreursByFields = explode('/', $exo->erreur_exo);

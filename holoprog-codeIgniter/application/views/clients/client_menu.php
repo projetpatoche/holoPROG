@@ -2,7 +2,7 @@
     <nav id="menu" class="nav">
         <ul>
             <li>
-                <a href="#">
+                <a href="<?php echo base_url();?>index.php/client_c/index">
 								<span class="icon">
 									<i aria-hidden="true" class="icon-home"></i>
 								</span>
@@ -10,11 +10,11 @@
                 </a>
             </li>
             <li>
-                <a href="<?php echo base_url(); ?>index.php/prof_c/">
+                <a href="<?php echo base_url();?>index.php/client_c/voirStatistique">
 								<span class="icon">
 									<i aria-hidden="true" class="icon-services"></i>
 								</span>
-                    <span>Liste des classes</span>
+                    <span>Statistique</span>
                 </a>
             </li>
             <li>

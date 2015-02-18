@@ -110,7 +110,6 @@ class Client_c extends CI_Controller {
             $data['nberreur'] = $data['taille_exo'] - $nbreussi;
             $this->load->view('clients/client_erreur_exo',$data);
             $this->load->view('clients/client_foot');
-
         }
     }
 
@@ -120,7 +119,6 @@ class Client_c extends CI_Controller {
         $data = $this->prof_m->donneeProf($this->session->userdata('identifiant'));
         //on détermine l'id du prof grâce à $data
         $this->session->set_userdata($data);
-
 
         //LIste des classes du prof
         $data['listeClasses']=$this->prof_m->getClasses($this->session->userdata('id_professeur'));
@@ -139,10 +137,15 @@ class Client_c extends CI_Controller {
 
         //Détails sur les erreurs dans les exercices
 
-
-
-
         $this->load->view('prof/prof_classe', $data);
         $this->load->view('prof/prof_foot');
+    }
+
+    public function voirStatistique(){
+        $donnee= $this->eleve_m->getDetailsEleveForProf($this->session->userdata('id_eleve'));
+        $this->load->view('clients/client_head');
+        $this->load->view('clients/client_menu');
+        $this->load->view('clients/statistique',$donnee);
+        $this->load->view('clients/client_foot');
     }
 }
