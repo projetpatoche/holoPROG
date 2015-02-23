@@ -112,9 +112,11 @@ class Exo_m extends CI_Model {
         echo $achievement.$exo->nb_essais." tentative(s) : <br/>";
         $i=1;
         echo "<div style='margin-left:5%'>";
-        foreach($erreursByFields as $select){
-            echo "Choix ".$i." : C'est trompé ".array_sum(explode('-',$select))." fois.<br/>";
-            $i++;
+        if($this->session->userdata('droit')==2||$exo->exo_fait==1) {
+            foreach ($erreursByFields as $select) {
+                echo "Choix " . $i . " : C'est trompé " . array_sum(explode('-', $select)) . " fois.<br/>";
+                $i++;
+            }
         }
         echo "</div>";
 

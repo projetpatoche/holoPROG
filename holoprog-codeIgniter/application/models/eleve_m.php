@@ -7,10 +7,8 @@ class Eleve_m extends CI_Model {
 		FROM eleve
 		WHERE identifiant=\"".$id."\"
 		limit 1";
-		$query=$this->db->query($requete);
-        $row = $query->row_array();
-		
-		return $row;
+        $eleve=$this->db->query($requete);
+        return $eleve->row();
 	}
 
     function EST_connecter()

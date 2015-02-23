@@ -142,7 +142,9 @@ class Client_c extends CI_Controller {
     }
 
     public function voirStatistique(){
-        $donnee= $this->eleve_m->getDetailsEleveForProf($this->session->userdata('id_eleve'));
+        $data= $this->eleve_m->getDetailsEleveForProf($this->session->userdata('id_eleve'));
+        $donnee['generale']=$this->eleve_m->donneeEleve($this->session->userdata('identifiant'));
+        $donnee['exo']= $data['donnee'];
         $this->load->view('clients/client_head');
         $this->load->view('clients/client_menu');
         $this->load->view('clients/statistique',$donnee);

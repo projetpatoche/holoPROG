@@ -263,7 +263,7 @@ form:after {
 
 <div class="container">
     <section id="content">
-    <form method="post" action="<?= site_url('users_c/inscription')?>">
+    <form method="post" action="<?php echo site_url('users_c/inscription')?>">
         <h1>Inscription</h1>
         <div>
 
