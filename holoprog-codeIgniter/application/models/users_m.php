@@ -6,12 +6,15 @@ class Users_m extends CI_Model {
         $this->db->insert("connexion", $donnees);
         $ide="SELECT identifiant FROM connexion WHERE login=\"".$donnees['login']."\"";
         $query=$this->db->query($ide)->row()->identifiant;
-        print_r($query);
+
 
         //$identifiant=$query[0];
-        $sql = "INSERT INTO eleve (nom_eleve, prenom_eleve, identifiant)
-                VALUES(\"".$data['nom_eleve']."\",\"".$data['prenom_eleve']."\",\"".$query."\")";
+        $sql = "INSERT INTO eleve (nom_eleve, prenom_eleve,id_classe,date_de_naissance,identifiant)
+                VALUES(\"".$data['nom_eleve']."\",\"".$data['prenom_eleve']."\",".$data['id_classe'].",\"".$data['date_de_naissance']."\",\"".$query."\")";
         $query=$this->db->query($sql);
+
+        $requete = "UPDATE classe SET nbr_eleve=nbr_eleve+1 WHERE id_classe=".$data['id_classe'].";";
+        $this->db->query($requete);
         //$this->db->insert("eleve", $data);
     }
 

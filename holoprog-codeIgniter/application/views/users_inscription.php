@@ -140,7 +140,9 @@ form:after {
 }
 #content form { margin: 0 20px; position: relative }
 #content form input[type="text"],
-#content form input[type="password"] {
+#content form input[type="password"],
+#content form input[type="date"],
+#content form select {
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     -ms-border-radius: 3px;
@@ -265,39 +267,49 @@ form:after {
     <section id="content">
     <form method="post" action="<?php echo site_url('users_c/inscription')?>">
         <h1>Inscription</h1>
-        <div>
+            <div>
+                <label>Login</label> <br/>
+                <input name="login_utilisateur"  type="text"  size="18" value="<?php if(isset($login)) echo $login; ?>" />
+                <?php echo form_error('login_utilisateur'); ?>
+                <br/><br/>
 
+                <label>Prenom</label> <br/>
+                <input name="prenom_utilisateur" type="text" size="18"/>
+                <?php echo form_error('prenom_utilisateur'); ?>
+                <br/><br/>
 
+                <label>Nom</label> <br/>
+                <input name="nom_utilisateur" type="text" size="18"/>
+                <?php echo form_error('nom_utilisateur'); ?>
+                <br/><br/>
 
-                        <label>Login</label> <br/>
-                        <input name="login_utilisateur"  type="text"  size="18" value="<?php if(isset($login)) echo $login; ?>" />
-                        <?php echo form_error('login_utilisateur'); ?>
-                    <br/><br/>
+                <label>Classe</label><br>
+                <select name="idclasse">
+                    <?php foreach($classes as $value):?>
+                    <option value="<?php echo $value->id_classe?>"><?php echo $value->nom_classe ?></option>
+                    <?php endforeach ?>
+                </select>
+                <br/><br/>
 
-                    <label>Prenom</label> <br/>
-                    <input name="prenom_utilisateur" type="text" size="18"/>
-                    <?php echo form_error('prenom_utilisateur'); ?>
-                    <br/><br/>
+                <label>Date de naissance</label> <br/>
+                <input name="naissance_utilisateur" type="date" required="" />
+                <?php echo form_error('naissance_utilisateur'); ?>
+                <br/><br/>
 
-                    <label>Nom</label> <br/>
-                    <input name="nom_utilisateur" type="text" size="18"/>
-                    <?php echo form_error('nom_utilisateur'); ?>
-                    <br/><br/>
+                <label>Mot de passe</label> <br/>
+                <input name="password_utilisateur" type="password" size="18" placeholder="Mot de passe" required="" id="password" />
+                <?php echo form_error('password_utilisateur'); ?>
+                <br/><br/>
 
-                    <label>Mot de passe</label> <br/>
-                    <input name="password_utilisateur" type="password" size="18" placeholder="Mot de passe" required="" id="password" />
-                    <?php echo form_error('password_utilisateur'); ?>
-                    <br/><br/>
+                <label>Vérifier mot de passe</label> <br/>
+                <input name="password_utilisateur2" type="password" size="18" placeholder="Mot de passe" required="" id="password" />
+                <?php echo form_error('password_utilisateur2'); ?>
+                <br/><br/>
 
-                    <label>Vérifier mot de passe :</label> <br/>
-                    <input name="password_utilisateur2" type="password" size="18" placeholder="Mot de passe" required="" id="password" />
-                    <?php echo form_error('password_utilisateur2'); ?>
-                    <br/><br/>
-
-                    <input type="submit" class="btn" name="sessions_connexion" value="Valider" />
-                    <p id="erreur"><?php if(isset($erreur)) echo $erreur;?></p>
-
-    </form></section>
+                <input type="submit" class="btn" name="sessions_connexion" value="Valider" />
+                <p id="erreur"><?php if(isset($erreur)) echo $erreur;?></p>
+            </div>
+    </form>
+    </section>
     <br/>
-</div>
 </div>

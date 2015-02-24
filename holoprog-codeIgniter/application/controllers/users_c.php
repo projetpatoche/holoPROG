@@ -74,24 +74,31 @@ class Users_c extends CI_Controller {
     }
 
     public function inscriptionUsers(){
+        $data['classes'] = $this->classe_m->getClasses();
 
         $this->load->view('users_head');
         $this->load->view('users_menu');
-        $this->load->view('users_inscription');
+        $this->load->view('users_inscription', $data);
         $this->load->view('users_foot');
 
     }
 
     public function inscription()
     {
+
+        //PENSER A INCREMENTER LE NOMBRE D'ELEVE DANS LA CLASSE
         $donnees['login']=$_POST['login_utilisateur'];
         $donnees['pass']=$_POST['password_utilisateur'];
+
         $this->form_validation->set_rules('login_utilisateur','login','trim|required');
         $this->form_validation->set_rules('password_utilisateur','Mot de passe','trim|required|matches[password_utilisateur2]');
         $this->form_validation->set_rules('password_utilisateur2','Vérifier mot de passe','trim|required');
+        $this->form_validation->set_rules('naissance_utilisateur','Vérifier date de naissance','trim|required');
 
         $data['nom_eleve']=$_POST['nom_utilisateur'];
         $data['prenom_eleve']=$_POST['prenom_utilisateur'];
+        $data['id_classe'] = $_POST['idclasse'];
+        $data['date_de_naissance'] = $_POST['naissance_utilisateur'];
 
 
         /* rappeler la vue à la fin de la méthode */

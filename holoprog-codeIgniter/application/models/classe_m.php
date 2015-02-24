@@ -2,6 +2,12 @@
 
 class Classe_m extends CI_Model {
 
+    public function getClasses(){
+        $requete = "SELECT id_classe,nom_classe FROM classe;";
+        $query = $this->db->query($requete);
+        return $query->result();
+    }
+
     public function getStatProf($id){
 
 

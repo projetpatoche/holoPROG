@@ -25,14 +25,7 @@
                     <span>Documentations</span>
                 </a>
             </li>
-            <li>
-                <a href="#">
-								<span class="icon">
-									<i aria-hidden="true" class="icon-blog"></i>
-								</span>
-                    <span>Patoche</span>
-                </a>
-            </li>
+
             <li>
                 <a href="#">
 								<span class="icon">
