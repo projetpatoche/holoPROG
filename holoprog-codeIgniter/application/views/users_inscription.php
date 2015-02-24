@@ -159,6 +159,7 @@ form:after {
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
     background: #eae7e7 url(<?php echo base_url(); ?>img/icone_connexion.png) no-repeat;
+    background-position: 2% -10% ;
     border: 1px solid #c8c8c8;
     color: #777;
     font: 13px Helvetica, Arial, sans-serif;
