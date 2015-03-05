@@ -8,7 +8,7 @@
         <iframe width="320" height="315" src="//www.youtube.com/embed/gHL9HCKloAs" frameborder="0" allowfullscreen></iframe>
     </div>
     <div class="col-md-8">
-        <form method="post" action="<?php echo base_url();?>index.php/client_c/correctionExo/2" >
+        <form method="post" action="<?php echo base_url();?>index.php/client_c/correctionExo/3" >
             <section id="connected">
                 <div class="col-md-4 list-reponse">
                     <ul class="connected list">

@@ -8,7 +8,7 @@
         <img src="<?php echo base_url();?>img/exercice/barriere/barriere_consignes.jpg">
     </div>
     <div class="col-md-6">
-        <form method="post" action="<?php echo base_url();?>index.php/client_c/correctionExo/1" >
+        <form method="post" action="<?php echo base_url();?>index.php/client_c/correctionExo/2" >
             <div class="">
                 <ul class="sortable">
 
