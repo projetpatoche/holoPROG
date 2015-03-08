@@ -20,8 +20,6 @@
                                 <OPTION value="1">1</OPTION>
                                 <OPTION value="2">2</OPTION>
                                 <OPTION value="3">3</OPTION>
-                                <!--  <OPTION value="4">4</OPTION>
-                                   <OPTION value="5">5</OPTION>-->
                             </SELECT>
                         </li>
                     </ul>
@@ -32,19 +30,13 @@
                                     <OPTION value="1">Ouvrir la vanne amont</OPTION>
                                     <OPTION value="2">Ouvrir la porte amont</OPTION>
                                     <OPTION value="3">3</OPTION>
-                                    <!--<OPTION value="1">1</OPTION>
-                                    <OPTION value="2">2</OPTION>
-                                    <OPTION value="3">3</OPTION>
-                                    <OPTION value="4">4</OPTION>
-                                    <OPTION value="5">5</OPTION>-->
                                 </SELECT></div></li>
 
                         <li><SELECT class="form-control" name="1" size="1">
                                 <OPTION value="1">1</OPTION>
                                 <OPTION value="2">2</OPTION>
                                 <OPTION value="3">3</OPTION>
-                                <!-- <OPTION value="4">4</OPTION>
-                                 <OPTION value="5">5</OPTION>-->
+
                             </SELECT></li>
 
                         <div class="row"></div>
@@ -53,8 +45,6 @@
                                 <OPTION value="1">1</OPTION>
                                 <OPTION value="2">2</OPTION>
                                 <OPTION value="3">3</OPTION>
-                                <!-- <OPTION value="4">4</OPTION>
-                                <OPTION value="5">5</OPTION>-->
                             </SELECT></li>
 
                         <div class="row"></div>
@@ -63,8 +53,6 @@
                                 <OPTION value="1">1</OPTION>
                                 <OPTION value="2">2</OPTION>
                                 <OPTION value="3">3</OPTION>
-                                <!-- <OPTION value="4">4</OPTION>
-                               <OPTION value="5">5</OPTION>-->
                             </SELECT></li>
 
                         <li><SELECT class="form-control" name="5" size="1">
