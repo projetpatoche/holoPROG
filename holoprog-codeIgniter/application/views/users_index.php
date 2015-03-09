@@ -18,12 +18,16 @@ table, caption, tbody, tfoot, thead, tr, th, td {
     background: transparent;
 }
 body {
-    background: #DCDDDF url(<?php echo base_url(); ?>img/fond_site.png);
-    color: #000;
+    background: url(<?php echo base_url(); ?>img/fond_site.jpg);
+   
     font: 14px Arial;
-    margin: 0 auto;
-    padding: 0;
-    position: relative;
+    
+
+      background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+
 }
 h1{ font-size:28px;}
 h2{ font-size:26px;}
@@ -50,24 +54,14 @@ form:after {
 }
 .container { margin: 25px auto; position: relative; width: 900px; }
 #content {
-    background: #f9f9f9;
-    background: -moz-linear-gradient(top,  rgba(248,248,248,1) 0%, rgba(249,249,249,1) 100%);
-    background: -webkit-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);
-    background: -o-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);
-    background: -ms-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);
-    background: linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#f9f9f9',GradientType=0 );
-    -webkit-box-shadow: 0 1px 0 #fff inset;
-    -moz-box-shadow: 0 1px 0 #fff inset;
-    -ms-box-shadow: 0 1px 0 #fff inset;
-    -o-box-shadow: 0 1px 0 #fff inset;
-    box-shadow: 0 1px 0 #fff inset;
-    border: 1px solid #c4c6ca;
+    background-color: rgba(218, 218, 218, 0.6);
+    border-radius: 10px; 
+    box-shadow: 1px 1px 12px #dadada;
     margin: 0 auto;
     padding: 25px 0 0;
     position: relative;
     text-align: center;
-    text-shadow: 0 1px 0 #fff;
+   
     width: 400px;
 }
 #content h1 {
@@ -79,11 +73,7 @@ form:after {
 }
 #content h1:before,
 #content h1:after {
-    content: "";
-    height: 1px;
-    position: absolute;
-    top: 10px;
-    width: 27%;
+    
 }
 #content h1:after {
     background: rgb(126,126,126);
@@ -105,20 +95,7 @@ form:after {
 }
 #content:after,
 #content:before {
-    background: #f9f9f9;
-    background: -moz-linear-gradient(top,  rgba(248,248,248,1) 0%, rgba(249,249,249,1) 100%);
-    background: -webkit-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);
-    background: -o-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);
-    background: -ms-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);
-    background: linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#f9f9f9',GradientType=0 );
-    border: 1px solid #c4c6ca;
-    content: "";
-    display: block;
-    height: 100%;
-    left: -1px;
-    position: absolute;
-    width: 100%;
+  
 }
 #content:after {
     -webkit-transform: rotate(2deg);

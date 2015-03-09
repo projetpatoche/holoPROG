@@ -19,6 +19,7 @@ class Prof_c extends CI_Controller {
         }
         $data['listeClasses']=$this->prof_m->getClasses($this->session->userdata('id_professeur'));
         $this->load->view('prof/prof_menu',$data);
+        $this->load->view('prof/prof_accueil');
         $this->load->view('prof/prof_foot');
 
     }

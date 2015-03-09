@@ -18,12 +18,13 @@ table, caption, tbody, tfoot, thead, tr, th, td {
     background: transparent;
 }
 body {
-    background: #DCDDDF url(<?php echo base_url(); ?>img/fond_site.png);
-    color: #000;
+    background-image: url(<?php echo base_url(); ?>img/fond_site.jpg);
     font: 14px Arial;
-    margin: 0 auto;
-    padding: 0;
-    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+
 }
 h1{ font-size:28px;}
 h2{ font-size:26px;}

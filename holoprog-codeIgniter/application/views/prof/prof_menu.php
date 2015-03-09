@@ -59,6 +59,8 @@
 
 
 </div>
+
+
 <script>
     //  The function to change the class REDUX FRAMEWORK
     var changeClass = function (r,className1,className2) {

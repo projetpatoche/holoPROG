@@ -1,11 +1,12 @@
-<h1 style="text-align:center">Statistique</h1>
+<div style="width:20%;margin-left:40%;">
+<h1 style="text-align:center; font-size: 30px">Statistique</h1>
 <br>
 <?php if ($exo==null):?>
     <b style="color:#ff0000;">Vous n'avez essayé aucun exercice</b>
 <?php else: ?>
     <td>
         Moyenne generale : <?php echo $generale->moyenne_eleve; ?>
-        <br>
+        <br><br>
         <?php foreach($exo as $unExo): ?>
 
             <b>Exercice <?php echo $unExo->id_exercice; ?></b><br>
@@ -16,3 +17,4 @@
         <?php endforeach; ?>
     </td>
 <?php endif; ?>
+</div>
