@@ -150,4 +150,14 @@ class Client_c extends CI_Controller {
         $this->load->view('clients/statistique',$donnee);
         $this->load->view('clients/client_foot');
     }
+
+    public function apropos(){
+
+        $donnees['titre']="connexion";
+
+        $this->load->view('clients/client_head');
+        $this->load->view('clients/client_menu');
+        $this->load->view('users_apropos');
+        $this->load->view('clients/client_foot');
+    }
 }

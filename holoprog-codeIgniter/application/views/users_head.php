@@ -8,6 +8,9 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>bootstrap/css/default.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>bootstrap/css/component.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>bootstrap/css/personnalisation.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>bootstrap/css/styleFormulaire.css">
+
     <script src="<?php echo base_url(); ?>js/modernizr.custom.js"></script>
 </head>
 <body>

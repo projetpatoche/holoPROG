@@ -23,7 +23,7 @@
 
             </li>
             <li>
-                <a href="#">
+                <a href="<?php echo base_url(); ?>index.php/prof_c/apropos">
 								<span class="icon">
 									<i aria-hidden="true" class="icon-team"></i>
 								</span>

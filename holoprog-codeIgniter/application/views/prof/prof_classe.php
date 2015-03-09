@@ -4,62 +4,62 @@
         font-size:30px;
     }
 
-
 </style>
-<div class="row" style="font-size:15px;" >
-    <div>
-    <table style ="width:50%;margin-left:20%;" class="table table-bordered" >
-        <caption>Liste des élèves</caption>
-        <tr>
-            <th>Nom</th>
-            <th>Prénom</th>
-            <th>Moyenne</th>
-        </tr>
-        <?php if($classe != null): ?>
-            <?php foreach ($classe as $r): ?>
-                <tr>
-                <td><?php echo $r->nom_eleve; ?></td>
-                <td><?php echo $r->prenom_eleve; ?></td>
-                <td><?php if($r->moyenne_eleve==null) echo "<span style=\"font-style:italic;\">Aucune données enregistrées</span>"; else echo $r->moyenne_eleve; ?></td>
+<div class="rowEleve" >
+    <div style="width:50%;margin-left:20%;">
+        <table  style="border: none;" class="table table-bordered" >
+            <caption>Liste des élèves</caption>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Moyenne</th>
+            </tr>
+            <?php if($classe != null): ?>
+                <?php foreach ($classe as $r): ?>
+                    <tr>
+                    <td><?php echo $r->nom_eleve; ?></td>
+                    <td><?php echo $r->prenom_eleve; ?></td>
+                    <td><?php if($r->moyenne_eleve==null) echo "<span style=\"font-style:italic;\">Aucune données enregistrées</span>"; else echo $r->moyenne_eleve; ?></td>
 
 
-                <?php if(!isset($detailsEleve) and eleve_m::aFaitUnExo($r->id_eleve)): ?>
-                    <td style="text-align: center;"><a href="<?php echo base_url();?>index.php/client_c/voirEleveFromProf/<?php echo $r->id_eleve; ?>/<?php echo $r->id_classe; ?>">
-                            Show</a></td>
-                <?php endif; ?>
+                    <?php if(!isset($detailsEleve) and eleve_m::aFaitUnExo($r->id_eleve)): ?>
+                        <td style="text-align: center;"><a href="<?php echo base_url();?>index.php/client_c/voirEleveFromProf/<?php echo $r->id_eleve; ?>/<?php echo $r->id_classe; ?>">
+                                Show</a></td>
+                    <?php endif; ?>
 
-                <?php if(isset($detailsEleve) and $detailsEleve[0]->id_eleve==$r->id_eleve): ?>
+                    <?php if(isset($detailsEleve) and $detailsEleve[0]->id_eleve==$r->id_eleve): ?>
 
-                    <!-- verification de l'existence du details Elev eet spécification pour savoir de quel élève on parle -->
-                    <td style="text-align: center;"><a href="<?php echo base_url();?>index.php/prof_c/voirClasse/<?php echo $r->id_classe; ?>">Hide</a></td>
+                        <!-- verification de l'existence du details Elev eet spécification pour savoir de quel élève on parle -->
+                        <td style="text-align: center;"><a href="<?php echo base_url();?>index.php/prof_c/voirClasse/<?php echo $r->id_classe; ?>">Hide</a></td>
+                        </tr>
+                        <tr >
+
+                        <td   colspan="4">
+                            <?php foreach($detailsEleve as $unExo): ?>
+                                <?php if($unExo->id_eleve==$r->id_eleve): ?>
+                                    <b>Exercice <?php echo $unExo->id_exercice; ?></b><br>
+                                    Moyenne exercice : <?php echo $unExo->moyenne_exo; ?><br>
+                                    Moyenne de classe : <?php echo number_format($unExo->moyenne_exo_classe,2); ?><br>
+                                    <?php exo_m::detailsExosByEleve($unExo->id_eleve, $unExo->id_exercice) ?>
+                                    <br>
+
+
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        </td>
+
+                    <?php endif; ?>
                     </tr>
-                    <tr >
-
-                    <td style="text-align:left;" colspan="4">
-                        <?php foreach($detailsEleve as $unExo): ?>
-                            <?php if($unExo->id_eleve==$r->id_eleve): ?>
-                                <b>Exercice <?php echo $unExo->id_exercice; ?></b><br>
-                                Moyenne exercice : <?php echo $unExo->moyenne_exo; ?><br>
-                                Moyenne de classe : <?php echo number_format($unExo->moyenne_exo_classe,2); ?><br>
-                                <?php exo_m::detailsExosByEleve($unExo->id_eleve, $unExo->id_exercice) ?>
-
-
-                            <?php endif; ?>
-                        <?php endforeach; ?>
-                    </td>
-
-                <?php endif; ?>
-                </tr>
-            <?php endforeach; ?>
-        <?php endif; ?>
-    </table>
+                <?php endforeach; ?>
+            <?php endif; ?>
+        </table>
     </div>
     <br><br>
 
 
     <!-- TABLEAU MOYENNE -->
     <div>
-    <table style ="width:50%;margin-left:20%;" class="table table-bordered" >
+    <table style ="width:50%;margin-left:20%;border:none;" class="table table-bordered" >
         <caption>Statistiques</caption>
         <tr>
             <th></th>
@@ -91,9 +91,9 @@
 
     <!-- QUARTILES ET MEDIANE -->
 
-        <div class="row" style ="width:50%;margin-left:20%;">
+        <div class="rowEleve" >
             <div class="col-md-4">
-                <table class="table table-bordered">
+                <table style="border: none;" class="table table-bordered">
                     <tr>
                         <th>1er quartile</th>
                     </tr>
@@ -111,7 +111,7 @@
             </div>
 
             <div class="col-md-4">
-                <table class="table table-bordered">
+                <table style="border: none;" class="table table-bordered">
                     <tr>
                         <th>Médiane</th>
                     </tr>
@@ -128,7 +128,7 @@
             </div>
 
             <div class="col-md-4">
-                <table  class="table table-bordered">
+                <table style="border: none;" class="table table-bordered">
                     <tr>
                         <th>3ème quartile</th>
                     </tr>

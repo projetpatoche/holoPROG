@@ -22,6 +22,20 @@ class Users_c extends CI_Controller {
         $this->load->view('users_foot');
     }
 
+    public function apropos(){
+        if( $this->session->userdata('droit')==2){
+            redirect('prof_c');
+        }
+        if( $this->session->userdata('droit')==1){
+            redirect('client_c');
+        }
+        $donnees['titre']="connexion";
+        $this->load->view('users_head');
+        $this->load->view('users_menu');
+        $this->load->view('users_apropos');
+        $this->load->view('users_foot');
+    }
+
 
    
     public function aff_connexion()

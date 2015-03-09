@@ -43,4 +43,16 @@ class Prof_c extends CI_Controller {
 
         $this->load->view('prof/prof_foot');
     }
+
+    public function apropos(){
+
+        $donnees['titre']="connexion";
+        $data['listeClasses']=$this->prof_m->getClasses($this->session->userdata('id_professeur'));
+        $this->load->view('prof/prof_head');
+        $this->load->view('prof/prof_menu', $data);
+        $this->load->view('users_apropos');
+        $this->load->view('prof/prof_foot');
+    }
+
+
 }

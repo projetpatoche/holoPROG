@@ -2,19 +2,11 @@
     <nav id="menu" class="nav">
         <ul>
             <li>
-                <a href="#">
+                <a href="<?php echo base_url(); ?>index.php/users_c">
 								<span class="icon">
 									<i aria-hidden="true" class="icon-home"></i>
 								</span>
                     <span>Home</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-								<span class="icon"> 
-									<i aria-hidden="true" class="icon-services"></i>
-								</span>
-                    <span>Exercice</span>
                 </a>
             </li>
             <li>
@@ -27,7 +19,7 @@
             </li>
 
             <li>
-                <a href="#">
+                <a href="<?php echo base_url(); ?>index.php/users_c/apropos">
 								<span class="icon">
 									<i aria-hidden="true" class="icon-team"></i>
 								</span>

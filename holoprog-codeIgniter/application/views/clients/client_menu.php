@@ -25,9 +25,8 @@
                     <span>Documentations</span>
                 </a>
             </li>
-          
             <li>
-                <a href="#">
+                <a href="<?php echo base_url(); ?>index.php/client_c/apropos">
 								<span class="icon">
 									<i aria-hidden="true" class="icon-team"></i>
 								</span>
