@@ -1,7 +1,7 @@
 <div class="main clearfix">
     <nav id="menu" class="nav">
         <ul>
-            <li>
+            <li style="margin-left:15%">
                 <a href="<?php echo base_url();?>index.php/prof_c/index">
 								<span class="icon">
 									<i aria-hidden="true" class="icon-home"></i>
@@ -31,16 +31,6 @@
                 </a>
             </li>
 
-            <?php foreach($listeClasses as $classe): ?>
-                <li>
-                    <a href="<?php echo base_url();?>index.php/prof_c/voirClasse/<?php echo $classe->id_classe; ?>">
-                        <span class="icon">
-                            <i aria-hidden="true" class="icon"></i>
-                        </span>
-                        <span ><?php echo $classe->nom_classe; ?></span>
-                    </a>
-                </li>
-            <?php endforeach; ?>
             <li>
                 <a href="<?php echo base_url(); ?>index.php/users_c/deconnexion">
 								<span class="icon">
@@ -52,6 +42,22 @@
         </ul>
     </nav>
 
+    <div id="listeClasses">
+
+        <ul>
+            <li style="display: inline-block">Liste des classes :</li>
+        <?php foreach($listeClasses as $classe): ?>
+            <li class="classeMenu">
+                <a href="<?php echo base_url();?>index.php/prof_c/voirClasse/<?php echo $classe->id_classe; ?>">
+                            <span class="icon">
+                                <i aria-hidden="true" class="icon"></i>
+                            </span>
+                    <span ><?php echo $classe->nom_classe; ?></span>
+                </a>
+            </li>
+        <?php endforeach; ?>
+        </ul>
+    </div>
 
 
     <br>
