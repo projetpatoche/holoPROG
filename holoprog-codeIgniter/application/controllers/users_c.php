@@ -74,12 +74,14 @@ class Users_c extends CI_Controller {
     }
 
     public function inscriptionUsers(){
+
         $data['classes'] = $this->classe_m->getClasses();
 
         $this->load->view('users_head');
         $this->load->view('users_menu');
         $this->load->view('users_inscription', $data);
         $this->load->view('users_foot');
+
 
     }
 
