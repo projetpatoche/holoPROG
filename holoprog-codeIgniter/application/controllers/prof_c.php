@@ -64,7 +64,7 @@ class Prof_c extends CI_Controller {
     }
 
     public function ajoutImage(){
-        $auto_int = $this->prof_m->autoIntExercice();
+        $auto_int = $this->exo_m->autoIntExercice();
         mkdir ("img/exercice/".$auto_int['auto_increment']);
         $this->load->view('prof/prof_head');
         $url = dirname(dirname(dirname(__FILE__)))."/img/exercice/".$auto_int['auto_increment']."/".$_FILES['icone']['name'];
@@ -87,7 +87,7 @@ class Prof_c extends CI_Controller {
             else
                 $result = $result . $number;
         }
-        $this->prof_m->insertExercice($result,$nbSelect,$_POST['difficulte'],$urlenonceBDD);
+        $this->exo_m->insertExercice($result,$nbSelect,$_POST['difficulte'],$urlenonceBDD);
 
         /*
         decoupage de l'image
@@ -101,7 +101,7 @@ class Prof_c extends CI_Controller {
             imagejpeg($im, $url);// enregistrement de l'image
 
             $proposition=$_POST[(($i+1)*100)+1]."__".$_POST[(($i+1)*100)+2]."__".$_POST[(($i+1)*100)+3];
-            $this->prof_m->insertProposition($proposition,$urlBDD);
+            $this->exo_m->insertProposition($proposition,$urlBDD);
         }
 
         $data['listeClasses']=$this->prof_m->getClasses($this->session->userdata('id_professeur'));
