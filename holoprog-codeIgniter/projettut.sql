@@ -281,15 +281,45 @@ CREATE TABLE exercice (
 id_exercice INT  AUTO_INCREMENT NOT NULL,
 correction_exercice varchar(30),
 taille_exo int,
+difficulte int,
+image_enonce text,
 PRIMARY KEY (id_exercice) 
 ) ENGINE=InnoDB; 
 
 INSERT INTO `exercice`
-(`id_exercice`,`correction_exercice`, `taille_exo`) 
-VALUES (null,'1-1-1-2-3',5);
+VALUES (null,'1-1-1-2-3',5,1,'../../../img/exercice/barriere/barriere_consignes.jpg');
 INSERT INTO `exercice`
-(`id_exercice`, `correction_exercice`, `taille_exo`) 
-VALUES (null,'1-1-1-2-3',5);
+VALUES (null,'1-1-1-2-3',5,2,'../../../img/exercice/barriere/barriere_consignes.jpg');
+
+CREATE TABLE proposition (
+id_proposition int not null auto_increment primary key,
+proposition_par_select text,
+numero_exo int,
+image_bloc text,
+Foreign key(numero_exo) references exercice(id_exercice)
+) ENGINE=InnoDB;
+
+INSERT INTO `proposition`
+VALUES (null,'Debut__Fin__Demarrage',1,'../../../img/exercice/barriere/barriere_bloc_1.png');
+INSERT INTO `proposition`
+VALUES (null,'Code valide ?__Code invalide ?__Ouverture',1,'../../../img/exercice/barriere/barriere_bloc_2.png');
+INSERT INTO `proposition`
+VALUES (null,'Ouvrir barriere + allumer voyant__Fermer barriere__Allumer voyant',1,'../../../img/exercice/barriere/barriere_bloc_3.png');
+INSERT INTO `proposition`
+VALUES (null,'Allumer voyant__Voiture passee ?__Fermer barriere',1,'../../../img/exercice/barriere/barriere_bloc_4.png');
+INSERT INTO `proposition`
+VALUES (null,'Voiture passee__Eteindre voyant ?__Fermer barriere + eteindre voyant',1,'../../../img/exercice/barriere/barriere_bloc_5.png');
+
+INSERT INTO `proposition`
+VALUES (null,'Debut__Fin__Demarrage',2,'../../../img/exercice/barriere/barriere_bloc_1.png');
+INSERT INTO `proposition`
+VALUES (null,'Code valide ?__Code invalide ?__Ouverture',2,'../../../img/exercice/barriere/barriere_bloc_2.png');
+INSERT INTO `proposition`
+VALUES (null,'Ouvrir barriere + allumer voyant__Fermer barriere__Allumer voyant',2,'../../../img/exercice/barriere/barriere_bloc_3.png');
+INSERT INTO `proposition`
+VALUES (null,'Allumer voyant__Voiture passee ?__Fermer barriere',2,'../../../img/exercice/barriere/barriere_bloc_4.png');
+INSERT INTO `proposition`
+VALUES (null,'Voiture passee__Eteindre voyant ?__Fermer barriere + eteindre voyant',2,'../../../img/exercice/barriere/barriere_bloc_5.png');
 
 CREATE TABLE solution_exo (
 id_exercice INT,
@@ -302,8 +332,6 @@ Foreign key (id_exercice) references exercice(id_exercice),
 Foreign key (id_eleve) references eleve(id_eleve),
 PRIMARY KEY (id_eleve,id_exercice) 
 ) ENGINE=InnoDB; 
-
-
 
 
 
