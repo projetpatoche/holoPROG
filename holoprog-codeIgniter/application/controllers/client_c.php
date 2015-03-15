@@ -30,22 +30,31 @@ class Client_c extends CI_Controller {
             endforeach;
         endif;
 
-
+        $donnee['exercice']=$exo;
         $donnee['titre']='Banque d\'exercice';
         $this->load->view('clients/client_head');
         $this->load->view('clients/client_menu');
         $this->load->view('clients/client_index',$donnee);
         $this->load->view('clients/client_foot');
     }
-    public function Exo($id)
+     public function Exo($id)
     {
         $donnee['titre']='Exercice numéro '.$id;
+        $select = $this->exo_m->constructionExercice($id);
+        $i=0;
+        foreach ($select as $r):
+            $donnee['select'][''.$i.'']=  explode('__',$r->proposition_par_select);
+            $donnee['select'][''.$i.'']['img']= $r->image_bloc;
+            $i++;
+        endforeach;
+
+        $donnee['exercice'] = $this->exo_m->recupere_taille_resum_exo($id);
         $this->load->view('clients/client_head');
         $this->load->view('clients/client_menu');
-        $this->load->view('clients/exo_'.$id,$donnee);
+        $this->load->view('clients/exo_1',$donnee);
         $this->load->view('clients/client_foot');
     }
-
+    
     public function correctionExo($id)
     {
 
