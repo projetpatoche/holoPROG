@@ -10,6 +10,15 @@
                 </a>
             </li>
 
+		<li>
+                <a href="<?php echo base_url(); ?>index.php/prof_c/ajoutExercice">
+								<span class="icon">
+									<i aria-hidden="true" class="icon-services"></i>
+								</span>
+                    <span>Ajout d'exercice</span>
+                </a>
+		</li>
+
 
             <li>
                 <a href="#">
@@ -19,9 +28,7 @@
                     <span>Documentations</span>
                 </a>
             </li>
-            <li>
 
-            </li>
             <li>
                 <a href="<?php echo base_url(); ?>index.php/prof_c/apropos">
 								<span class="icon">
