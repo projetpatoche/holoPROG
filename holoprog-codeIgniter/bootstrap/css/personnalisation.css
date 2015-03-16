@@ -12,12 +12,10 @@
     margin-right: auto;
 }
 /*Code exercice barriere*/
-.barriere_bloc_1{
-    background-image: url('../../img/exercice/barriere/barriere_bloc_1.png');
-    background-repeat: no-repeat;
-    width: 415px;
-    height: 120px;
-    padding: 0;
+.barriere_bloc_1{ 
+	position: relative;
+	margin-top:-20px;
+	width: 0px; 
 }
 
 .select_barriere_bloc_1{
