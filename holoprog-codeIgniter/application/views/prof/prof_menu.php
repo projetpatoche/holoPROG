@@ -1,7 +1,7 @@
 <div class="main clearfix">
     <nav id="menu" class="nav">
         <ul>
-            <li style="margin-left:15%">
+            <li >
                 <a href="<?php echo base_url();?>index.php/prof_c/index">
 								<span class="icon">
 									<i aria-hidden="true" class="icon-home"></i>
