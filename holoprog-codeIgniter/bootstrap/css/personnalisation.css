@@ -11,7 +11,15 @@
     margin-left: auto;
     margin-right: auto;
 }
-/*Code exercice barriere*/
+
+.ajout{
+position:relative;
+text-align:center;
+left:35%;
+width:30%;
+border: 1px black solid;
+}
+
 .barriere_bloc_1{ 
 	position: relative;
 	margin-top:-20px;
