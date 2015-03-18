@@ -49,19 +49,41 @@
     font-family: 'alamain';
 }
 
+#div_apropos h1{
+    font-family: alamain;
+    font-size:36px;
+}
+
+#div_apropos span{
+    margin: 1% 0;
+    text-align: left;
+    display: block;
+    list-style-image: none;
+    width:8%;
+    margin-left: 46%;
+}
+
 #div_apropos{
     text-align: center;
-    margin-bottom: 10%;
 }
 
 #rowEleve{
     font-size: 15px;
+
 }
 
 
 #bloc_statistique{
     margin-left:30%;
 }
+
+.stat_eleve_titre{
+    font-size:18px;
+    text-align: center;
+    margin-left:19%;
+}
+
+
 
 .classeMenu{
     font-size: 21px;
@@ -77,6 +99,13 @@
 
 }
 
+.classeMenuHead{
+    font-family: alamain;
+    font-size:19px;
+    display: inline-block;
+    color:#525967;
+}
+
 .classeMenu a:hover{
     text-decoration: none;
     width:30%;
@@ -85,7 +114,7 @@
 }
 
 #listeClasses{
-    margin-left: 15%;
-    margin-top:20px;
+
+    margin-top:30px;
     width:50%;
 }

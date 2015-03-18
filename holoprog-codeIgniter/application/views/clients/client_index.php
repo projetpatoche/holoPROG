@@ -61,17 +61,17 @@
     </div>
 </div>
 
-
+<div style="margin-left:42%;margin-top:3%;">
 <?php foreach ($exercice as $r):?>
 <div class="row"> <!-- Boutons exercices -->
     <div class="col-md-1"></div>
 	<div class="col-md-8">
-		
+
         <button class="btn btn-primary btn-lg" data-toggle="modal"
                 data-target="#exercice<?php echo $r->id_exercice?>">
             Exercice <?php echo $r->id_exercice?>
-        </button><br><br> 
-         
+        </button><br><br>
+
     </div>
 </div> <!-- Boutons exercices -->
 
@@ -104,3 +104,4 @@
     </div><!-- /.modal -->
 </div>
 <?php endforeach; ?>
+</div>

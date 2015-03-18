@@ -1,3 +1,6 @@
+
+
+
 <div class="main clearfix">
     <nav id="menu" class="nav">
         <ul>
@@ -52,16 +55,17 @@
     <div id="listeClasses">
 
         <ul>
-            <li style="display: inline-block">Liste des classes :</li>
+            <li class="classeMenuHead">Liste des classes :</li><br>
         <?php foreach($listeClasses as $classe): ?>
             <li class="classeMenu">
+
                 <a href="<?php echo base_url();?>index.php/prof_c/voirClasse/<?php echo $classe->id_classe; ?>">
                             <span class="icon">
                                 <i aria-hidden="true" class="icon"></i>
                             </span>
                     <span ><?php echo $classe->nom_classe; ?></span>
                 </a>
-            </li>
+            </li><br>
         <?php endforeach; ?>
         </ul>
     </div>

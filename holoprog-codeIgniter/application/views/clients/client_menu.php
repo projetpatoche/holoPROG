@@ -14,7 +14,7 @@
 								<span class="icon">
 									<i aria-hidden="true" class="icon-services"></i>
 								</span>
-                    <span>Statistique</span>
+                    <span>Résultats</span>
                 </a>
             </li>
             <li>

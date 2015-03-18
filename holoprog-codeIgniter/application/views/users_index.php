@@ -3,7 +3,7 @@
 <div class="container">
     <section id="content">
         <?php if($titre=="connexion"):?>
-        <h1>HoloPROG</h1>
+        <h1 style="font-family: alamain;font-size:36px">HoloProg</h1>
 
         <?php echo form_open('users_c/aff_connexion'); ?>
             <h1>Connexion</h1>
