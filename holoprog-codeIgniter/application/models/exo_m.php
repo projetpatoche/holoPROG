@@ -3,7 +3,7 @@
 class Exo_m extends CI_Model {
     public function nbExo()
     {
-        $requete="SELECT id_exercice
+        $requete="SELECT *
 		FROM exercice";
         $query=$this->db->query($requete);
 
@@ -122,6 +122,41 @@ class Exo_m extends CI_Model {
 
     }
 
+    public function constructionExercice($idExo){
+        $requete="SELECT *
+		FROM proposition
+		where numero_exo=".$idExo.";";
+        $exo=$this->db->query($requete);
+        return $exo->result();
+    }
 
+    public function recupere_taille_resum_exo($idExo){
+        $requete="SELECT *
+		FROM exercice
+		where id_exercice=".$idExo.";";
+        $exo=$this->db->query($requete);
+        return $exo->row();
+    }
+
+
+    public function insertProposition($proposition,$url){
+        $requete="SELECT Max(id_exercice) as id FROM exercice;";
+        $query=$this->db->query($requete);
+        $row = $query->row_array();
+        $requete="insert into proposition (`id_proposition`, `proposition_par_select`, `numero_exo`, `image_bloc`) values(null,'".$proposition."',".$row['id'].",'".$url."');";
+        $this->db->query($requete);
+    }
+
+    public function insertExercice($correction,$taille,$difficulte,$url){
+        $requete="INSERT INTO `exercice`(`id_exercice`, `correction_exercice`, `taille_exo`, `difficulte`, `image_enonce`) VALUES (null,'".$correction."',".$taille.",".$difficulte.",'".$url."');";        
+        $this->db->query($requete);
+    }
+
+    public function autoIntExercice(){
+        $requete="SELECT auto_increment FROM information_schema.TABLES WHERE TABLE_NAME = 'exercice'";
+        $query=$this->db->query($requete);
+        $row = $query->row_array();
+        return $row;
+    }
     
 }

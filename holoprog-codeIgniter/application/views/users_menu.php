@@ -1,23 +1,15 @@
 <div class="main clearfix">
-    <nav id="menu" class="nav">
-        <ul>
-            <li>
-                <a href="#">
+    <nav id="menu" class="nav" >
+        <ul >
+            <li style="margin-left:15%">
+                <a href="<?php echo base_url(); ?>index.php/users_c">
 								<span class="icon">
 									<i aria-hidden="true" class="icon-home"></i>
 								</span>
                     <span>Home</span>
                 </a>
             </li>
-            <li>
-                <a href="#">
-								<span class="icon"> 
-									<i aria-hidden="true" class="icon-services"></i>
-								</span>
-                    <span>Exercice</span>
-                </a>
-            </li>
-            <li>
+            <li >
                 <a href="#">
 								<span class="icon">
 									<i aria-hidden="true" class="icon-portfolio"></i>
@@ -26,16 +18,16 @@
                 </a>
             </li>
 
-            <li>
-                <a href="#">
+            <li >
+                <a href="<?php echo base_url(); ?>index.php/users_c/apropos">
 								<span class="icon">
 									<i aria-hidden="true" class="icon-team"></i>
 								</span>
                     <span>A propos</span>
                 </a>
             </li>
-            <li>
-                <a href="mailto:patoche@patoche.com">Send an Email >
+            <li >
+                <a href="#">
 								<span class="icon">
 									<i aria-hidden="true" class="icon-contact"></i>
 								</span>

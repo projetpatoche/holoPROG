@@ -1,7 +1,10 @@
+
+
+
 <div class="main clearfix">
     <nav id="menu" class="nav">
         <ul>
-            <li>
+            <li >
                 <a href="<?php echo base_url();?>index.php/prof_c/index">
 								<span class="icon">
 									<i aria-hidden="true" class="icon-home"></i>
@@ -9,6 +12,15 @@
                     <span>Home</span>
                 </a>
             </li>
+
+		<li>
+                <a href="<?php echo base_url(); ?>index.php/prof_c/ajoutExercice">
+								<span class="icon">
+									<i aria-hidden="true" class="icon-services"></i>
+								</span>
+                    <span>Ajout d'exercice</span>
+                </a>
+		</li>
 
 
             <li>
@@ -19,11 +31,9 @@
                     <span>Documentations</span>
                 </a>
             </li>
-            <li>
 
-            </li>
             <li>
-                <a href="#">
+                <a href="<?php echo base_url(); ?>index.php/prof_c/apropos">
 								<span class="icon">
 									<i aria-hidden="true" class="icon-team"></i>
 								</span>
@@ -31,16 +41,6 @@
                 </a>
             </li>
 
-            <?php foreach($listeClasses as $classe): ?>
-                <li>
-                    <a href="<?php echo base_url();?>index.php/prof_c/voirClasse/<?php echo $classe->id_classe; ?>">
-                        <span class="icon">
-                            <i aria-hidden="true" class="icon"></i>
-                        </span>
-                        <span ><?php echo $classe->nom_classe; ?></span>
-                    </a>
-                </li>
-            <?php endforeach; ?>
             <li>
                 <a href="<?php echo base_url(); ?>index.php/users_c/deconnexion">
 								<span class="icon">
@@ -52,6 +52,23 @@
         </ul>
     </nav>
 
+    <div id="listeClasses">
+
+        <ul>
+            <li class="classeMenuHead">Liste des classes :</li><br>
+        <?php foreach($listeClasses as $classe): ?>
+            <li class="classeMenu">
+
+                <a href="<?php echo base_url();?>index.php/prof_c/voirClasse/<?php echo $classe->id_classe; ?>">
+                            <span class="icon">
+                                <i aria-hidden="true" class="icon"></i>
+                            </span>
+                    <span ><?php echo $classe->nom_classe; ?></span>
+                </a>
+            </li><br>
+        <?php endforeach; ?>
+        </ul>
+    </div>
 
 
     <br>

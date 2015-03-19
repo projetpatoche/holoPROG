@@ -11,76 +11,25 @@
     margin-left: auto;
     margin-right: auto;
 }
-/*Code exercice barriere*/
-.barriere_bloc_1{
-    background-image: url('../../img/exercice/barriere/barriere_bloc_1.png');
-    background-repeat: no-repeat;
-    width: 415px;
-    height: 120px;
-    padding: 0;
+
+.ajout{
+position:relative;
+text-align:center;
+left:35%;
+width:30%;
+border: 1px black solid;
+}
+
+.barriere_bloc_1{ 
+	position: relative;
+	margin-top:-20px;
+	width: 0px; 
 }
 
 .select_barriere_bloc_1{
     position: relative;
     top: 40px;
     left: 60px;
-}
-
-.barriere_bloc_2{
-    background-image: url('../../img/exercice/barriere/barriere_bloc_2.png');
-    background-repeat: no-repeat;
-    width: 416px;
-    height: 141px;
-    padding: 0;
-}
-
-.select_barriere_bloc_2{
-    position: relative;
-    top: 35px;
-    left: 45px;
-}
-
-.barriere_bloc_3{
-    background-image: url('../../img/exercice/barriere/barriere_bloc_3.png');
-    background-repeat: no-repeat;
-    width: 416px;
-    height: 100px;
-    padding: 0;
-}
-
-.select_barriere_bloc_3{
-    position: relative;
-    top: 25px;
-    left: 25px;
-}
-
-.barriere_bloc_4{
-    background-image: url('../../img/exercice/barriere/barriere_bloc_4.png');
-    background-repeat: no-repeat;
-    width: 416px;
-    height: 135px;
-    padding: 0;
-}
-
-.select_barriere_bloc_4{
-    position: relative;
-    top: 35px;
-    left: 35px;
-}
-
-.barriere_bloc_5{
-    background-image: url('../../img/exercice/barriere/barriere_bloc_5.png');
-    background-repeat: no-repeat;
-    width: 550px;
-    height: 107px;
-    padding: 0;
-
-}
-
-.select_barriere_bloc_5{
-    position: relative;
-    top: 25px;
-    left: 25px;
 }
 
 .bloc_condition{
@@ -106,4 +55,74 @@
 
 .alamain{
     font-family: 'alamain';
+}
+
+#div_apropos h1{
+    font-family: alamain;
+    font-size:36px;
+}
+
+#div_apropos span{
+    margin: 1% 0;
+    text-align: left;
+    display: block;
+    list-style-image: none;
+    width:8%;
+    margin-left: 46%;
+}
+
+#div_apropos{
+    text-align: center;
+}
+
+#rowEleve{
+    font-size: 15px;
+
+}
+
+
+#bloc_statistique{
+    margin-left:30%;
+}
+
+.stat_eleve_titre{
+    font-size:18px;
+    text-align: center;
+    margin-left:19%;
+}
+
+
+
+.classeMenu{
+    font-size: 21px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 5px;
+    margin:5px;
+    width:30%;
+    vertical-align: middle;
+    height: 30px;
+    background-color: #004a80 ;
+    opacity: 0.7;
+
+}
+
+.classeMenuHead{
+    font-family: alamain;
+    font-size:19px;
+    display: inline-block;
+    color:#525967;
+}
+
+.classeMenu a:hover{
+    text-decoration: none;
+    width:30%;
+    height: 30px;
+
+}
+
+#listeClasses{
+
+    margin-top:30px;
+    width:50%;
 }

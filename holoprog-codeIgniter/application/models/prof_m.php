@@ -47,9 +47,6 @@ class Prof_m extends CI_Model {
 
     public function ecarttype($idClasse){
 
-
-
-
         $requete = "SELECT AVG(moyenne_eleve) as moy FROM eleve where id_classe=".$idClasse.";";
         $query=$this->db->query($requete);
         $moyenne=$query->row()->moy;
