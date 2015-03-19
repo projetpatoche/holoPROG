@@ -35,7 +35,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="mailto:patoche@patoche.com">Send an Email >
 								<span class="icon">
 									<i aria-hidden="true" class="icon-contact"></i>
 								</span>
