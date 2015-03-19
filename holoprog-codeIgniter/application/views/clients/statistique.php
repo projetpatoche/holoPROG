@@ -4,7 +4,7 @@
     <?php if ($exo==null):?>
         <b style="color:#ff0000;">Vous n'avez essayé aucun exercice</b>
     <?php else: ?>
-            <span class="stat_eleve_titre">Moyenne generale : <?php echo $generale->moyenne_eleve; ?></span>
+            <span class="stat_eleve_titre">Moyenne générale : <?php echo $generale->moyenne_eleve; ?></span>
             <br><br>
 
             <?php foreach($exo as $unExo): ?>
