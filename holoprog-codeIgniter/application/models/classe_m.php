@@ -40,17 +40,21 @@ class Classe_m extends CI_Model {
         $quartile1 = array();
         $mediane = array();
         $quartile3 = array();
-        foreach($donnee['affichageDetails'] as $line){
-            if($i<(int)sizeof($donnee['affichageDetails'])/4){//premier quart
-                array_push($quartile1, $line);
+        $quart =  (int)sizeof($donnee['affichageDetails'])/4;
+        if(sizeof($donnee['affichageDetails'])>=4) {
+
+            foreach ($donnee['affichageDetails'] as $line) {
+                if ($line->moyenne_eleve < $donnee['affichageDetails'][$quart]->moyenne_eleve) {//premier quart
+                    array_push($quartile1, $line);
+                } else if ($line->moyenne_eleve >= $donnee['affichageDetails'][$quart]->moyenne_eleve &&
+                    $line->moyenne_eleve < $donnee['affichageDetails'][$quart*3]->moyenne_eleve
+                ) {//entre le premier et 3 eme quart
+                    array_push($mediane, $line);
+                } else {//3eme quart
+                    array_push($quartile3, $line);
+                }
+                $i++;
             }
-            else if($i>=(int)sizeof($donnee['affichageDetails'])/4 && $i<(int)3*(sizeof($donnee['affichageDetails'])/4) ){//entre le premier et 3 eme quart
-                array_push($mediane, $line);
-            }
-            else{//3eme quart
-                array_push($quartile3, $line);
-            }
-            $i++;
         }
         $donnee['quartile1']=$quartile1;
         $donnee['mediane']=$mediane;
