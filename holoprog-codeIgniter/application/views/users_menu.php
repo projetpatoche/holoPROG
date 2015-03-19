@@ -27,7 +27,7 @@
                 </a>
             </li>
             <li >
-                <a href="mailto:patochee@patoche.com">
+                <a href="mailto:patoche@patoche.com">
 								<span class="icon">
 									<i aria-hidden="true" class="icon-contact"></i>
 								</span>
