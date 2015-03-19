@@ -18,7 +18,7 @@
             <div>
                 <input type="submit" value="Se connecter" />
                 <?php echo anchor('users_c/inscriptionUsers','Inscrivez vous!')?>
-                <?php echo anchor('users_c/mdp_oublie','Mot de passe oublié ?')?>
+
 
             </div>
         <?php echo form_close(); ?>

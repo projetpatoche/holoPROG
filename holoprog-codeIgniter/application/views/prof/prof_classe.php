@@ -96,7 +96,8 @@
 
 <!-- QUARTILES ET MEDIANE -->
 
-<div class="rowEleve" style="margin-bottom: 15%; " >
+<div class="rowEleve" style="margin-bottom: 15
+%; " >
     <div class="col-md-4">
         <table style="border: none;" class="table table-bordered">
             <tr>
